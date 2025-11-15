@@ -12,6 +12,6 @@ Practical end-to-end tour of building and operating a cloud-native .NET 10 app w
 
 ## History
 
-- 2024-10: Breach
-- 2024-12: Tietoevry Create
-- 2025-11: Crayon Consulting
+- 2024-10: Breach - Internal Tech Talk (20 people)
+- 2024-12: Tietoevry Create - Internal Competence gathering (10 people)
+- 2025-11: Crayon Consulting - Internal Competence gathering (10 people)
