@@ -35,3 +35,20 @@ briefly compares Azure DevOps for context—includes a live workflow demo.
 - Optional: prior use of any Git hosting service
 
 ---
+
+## [Hvorfor Platform Engineering](platform-engineering/README.md)
+
+Skaler utviklingsorganisasjonen — ikke kompleksiteten. Introduksjon til Platform
+Engineering og Internal Developer Platforms (IDPs): hvorfor golden paths og
+selvbetjening gir utviklerverdi, hva det betyr for utviklere, ops og virksomheten,
+og hvordan man starter med en Minimum Viable Platform.
+
+`platform-engineering` `idp` `golden-paths` `developer-experience` `devops` `team-topologies`
+> Duration: 30 min
+
+## Prerequisites
+
+- Basic understanding of cloud-native delivery (containers, CI/CD)
+- Optional: familiarity with DevOps and Kubernetes concepts
+
+---
