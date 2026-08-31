@@ -16,4 +16,4 @@ og hvordan man starter med en Minimum Viable Platform.
 ## History
 
 - 2026-04-29: Crayon - Internal dry run (ran 30)
-- 2026-09-03: Breakfast seminar
+- 2026-09-09: Breakfast seminar
