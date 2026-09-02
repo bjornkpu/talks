@@ -9,6 +9,11 @@ rundt autonomi, tall fra 7 uker med reell bruk, og ærlige fallgruver.
 `ai` `agents` `claude-code` `skills` `azure-devops` `ddd` `developer-experience`
 > Duration: 30 min
 
+## Slides
+
+- [Slides 2026-08-19 (HTML)](slides-2026-08-19.html)
+- [Slides 2026-08-19 (PDF)](slides-2026-08-19.pdf)
+
 ## Prerequisites
 
 - Basic software development and Git workflow (branches, pull requests)
