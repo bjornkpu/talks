@@ -1,0 +1,21 @@
+gitGraph
+   commit id: "main"
+   branch feat/20961-utslippsfrie
+   commit
+   commit
+   checkout main
+   branch test/21255-golden-set
+   commit
+   checkout main
+   commit id: "senere"
+   branch chore/nuget-bump
+   commit
+   checkout feat/20961-utslippsfrie
+   commit
+   checkout main
+   merge feat/20961-utslippsfrie
+   checkout test/21255-golden-set
+   commit
+   checkout main
+   merge test/21255-golden-set
+   merge chore/nuget-bump

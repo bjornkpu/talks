@@ -1,0 +1,22 @@
+{
+  "theme": "base",
+  "themeVariables": {
+    "fontFamily": "system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
+    "fontSize": "16px",
+    "git0": "#324947",
+    "git1": "#5eca9b",
+    "git2": "#ed8550",
+    "git3": "#3c7c97",
+    "gitBranchLabel0": "#ffffff",
+    "gitBranchLabel1": "#202e2d",
+    "gitBranchLabel2": "#ffffff",
+    "gitBranchLabel3": "#ffffff",
+    "commitLabelColor": "#202e2d",
+    "commitLabelBackground": "#ebe8e4",
+    "tagLabelColor": "#202e2d"
+  },
+  "gitGraph": {
+    "showCommitLabel": true,
+    "mainBranchName": "main"
+  }
+}

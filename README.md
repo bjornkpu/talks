@@ -52,3 +52,20 @@ og hvordan man starter med en Minimum Viable Platform.
 - Optional: familiarity with DevOps and Kubernetes concepts
 
 ---
+
+## [KI-drevet utvikling](ki-drevet-utvikling/README.md)
+
+KI som kollega gjennom hele utviklingsløpet: work item, brainstorm, spec og plan,
+implementasjon, pull request og merge — med arbeidsmåten kodet som skills i repoet.
+DDD-vinkling på hvor mennesket bør stå, guardrails rundt autonomi, tall fra reell
+bruk og ærlige fallgruver.
+
+`ai` `agents` `claude-code` `skills` `azure-devops` `ddd` `developer-experience`
+> Duration: 30 min
+
+## Prerequisites
+
+- Basic software development and Git workflow (branches, pull requests)
+- Optional: prior exposure to AI coding assistants
+
+---
