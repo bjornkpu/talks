@@ -22,3 +22,4 @@ rundt autonomi, tall fra 7 uker med reell bruk, og ærlige fallgruver.
 ## History
 
 - 2026-08-19: Enova - Internal session
+- 2026-09-02: SoftwareOne - Internal session
