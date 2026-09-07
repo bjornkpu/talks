@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Five planes diagram: three stacked planes (Developer Control, Integration & Delivery, Resource)
+  bracketed by two cross-cutting side bands (Security, Observability).
+  Each panel shows its components as pills.
+  Dark-background variant for software-one theme.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 360" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <style>
+      .panel { stroke-width: 1.5; }
+      .p-dev { fill: rgba(73,215,255,0.08); stroke: #49D7FF; }
+      .p-int { fill: rgba(176,167,255,0.08); stroke: #B0A7FF; }
+      .p-res { fill: rgba(44,143,146,0.08); stroke: #2C8F92; }
+      .p-sec { fill: rgba(247,103,94,0.08); stroke: #F7675E; }
+      .p-obs { fill: rgba(51,102,255,0.08); stroke: #3366FF; }
+      .heading { font-size: 18px; font-weight: 700; letter-spacing: 0.06em; }
+      .v-heading { font-size: 18px; font-weight: 700; letter-spacing: 0.08em; }
+      .h-dev { fill: #49D7FF; }
+      .h-int { fill: #B0A7FF; }
+      .h-res { fill: #2C8F92; }
+      .h-sec { fill: #F7675E; }
+      .h-obs { fill: #3366FF; }
+      .role { fill: #A1A7AE; font-size: 12px; font-style: italic; }
+      .cross-tag { fill: #A1A7AE; font-size: 10px; font-style: italic; letter-spacing: 0.14em; }
+      .pill { fill: rgba(255,255,255,0.05); stroke: rgba(255,255,255,0.22); stroke-width: 1; }
+      .pill-text { fill: #FFFFFF; font-size: 12px; font-weight: 500; }
+    </style>
+  </defs>
+  <g transform="translate(20, 20)">
+    <rect class="panel p-sec" width="170" height="320" rx="8"/>
+    <text class="v-heading h-sec" x="85" y="32" text-anchor="middle">SECURITY</text>
+    <text class="cross-tag" x="85" y="52" text-anchor="middle">CROSS-CUTTING</text>
+    <g transform="translate(20, 75)">
+      <rect class="pill" x="0" y="0" width="130" height="24" rx="12"/>
+      <text class="pill-text" x="65" y="16" text-anchor="middle">Policy engine</text>
+      <rect class="pill" x="0" y="34" width="130" height="24" rx="12"/>
+      <text class="pill-text" x="65" y="50" text-anchor="middle">Secrets</text>
+      <rect class="pill" x="0" y="68" width="130" height="24" rx="12"/>
+      <text class="pill-text" x="65" y="84" text-anchor="middle">Identity</text>
+      <rect class="pill" x="0" y="102" width="130" height="24" rx="12"/>
+      <text class="pill-text" x="65" y="118" text-anchor="middle">Scanning</text>
+      <rect class="pill" x="0" y="136" width="130" height="24" rx="12"/>
+      <text class="pill-text" x="65" y="152" text-anchor="middle">SBOM</text>
+    </g>
+  </g>
+  <g transform="translate(210, 20)">
+    <rect class="panel p-dev" width="680" height="100" rx="8"/>
+    <text class="heading h-dev" x="20" y="28">DEVELOPER CONTROL</text>
+    <text class="role" x="20" y="48">Grensesnittene utviklere møter.</text>
+    <g transform="translate(20, 60)">
+      <rect class="pill" x="0" y="0" width="130" height="26" rx="13"/>
+      <text class="pill-text" x="65" y="17" text-anchor="middle">Workload-spec</text>
+      <rect class="pill" x="138" y="0" width="90" height="26" rx="13"/>
+      <text class="pill-text" x="183" y="17" text-anchor="middle">Portal</text>
+      <rect class="pill" x="236" y="0" width="60" height="26" rx="13"/>
+      <text class="pill-text" x="266" y="17" text-anchor="middle">API</text>
+      <rect class="pill" x="304" y="0" width="60" height="26" rx="13"/>
+      <text class="pill-text" x="334" y="17" text-anchor="middle">CLI</text>
+    </g>
+  </g>
+  <g transform="translate(210, 130)">
+    <rect class="panel p-int" width="680" height="100" rx="8"/>
+    <text class="heading h-int" x="20" y="28">INTEGRATION &amp; DELIVERY</text>
+    <text class="role" x="20" y="48">Veien fra interface til kjørende app.</text>
+    <g transform="translate(20, 60)">
+      <rect class="pill" x="0" y="0" width="140" height="26" rx="13"/>
+      <text class="pill-text" x="70" y="17" text-anchor="middle">Versjonskontroll</text>
+      <rect class="pill" x="148" y="0" width="50" height="26" rx="13"/>
+      <text class="pill-text" x="173" y="17" text-anchor="middle">CI</text>
+      <rect class="pill" x="206" y="0" width="50" height="26" rx="13"/>
+      <text class="pill-text" x="231" y="17" text-anchor="middle">CD</text>
+      <rect class="pill" x="264" y="0" width="130" height="26" rx="13"/>
+      <text class="pill-text" x="329" y="17" text-anchor="middle">Orchestrator</text>
+    </g>
+  </g>
+  <g transform="translate(210, 240)">
+    <rect class="panel p-res" width="680" height="100" rx="8"/>
+    <text class="heading h-res" x="20" y="28">RESOURCE</text>
+    <text class="role" x="20" y="48">Der workloads faktisk lever.</text>
+    <g transform="translate(20, 60)">
+      <rect class="pill" x="0" y="0" width="90" height="26" rx="13"/>
+      <text class="pill-text" x="45" y="17" text-anchor="middle">Compute</text>
+      <rect class="pill" x="98" y="0" width="90" height="26" rx="13"/>
+      <text class="pill-text" x="143" y="17" text-anchor="middle">Database</text>
+      <rect class="pill" x="196" y="0" width="130" height="26" rx="13"/>
+      <text class="pill-text" x="261" y="17" text-anchor="middle">Object storage</text>
+      <rect class="pill" x="334" y="0" width="60" height="26" rx="13"/>
+      <text class="pill-text" x="364" y="17" text-anchor="middle">DNS</text>
+      <rect class="pill" x="402" y="0" width="90" height="26" rx="13"/>
+      <text class="pill-text" x="447" y="17" text-anchor="middle">Nettverk</text>
+      <rect class="pill" x="500" y="0" width="60" height="26" rx="13"/>
+      <text class="pill-text" x="530" y="17" text-anchor="middle">IAM</text>
+    </g>
+  </g>
+  <g transform="translate(910, 20)">
+    <rect class="panel p-obs" width="170" height="320" rx="8"/>
+    <text class="v-heading h-obs" x="85" y="32" text-anchor="middle">OBSERVABILITY</text>
+    <text class="cross-tag" x="85" y="52" text-anchor="middle">CROSS-CUTTING</text>
+    <g transform="translate(20, 75)">
+      <rect class="pill" x="0" y="0" width="130" height="24" rx="12"/>
+      <text class="pill-text" x="65" y="16" text-anchor="middle">Logger</text>
+      <rect class="pill" x="0" y="34" width="130" height="24" rx="12"/>
+      <text class="pill-text" x="65" y="50" text-anchor="middle">Metrics</text>
+      <rect class="pill" x="0" y="68" width="130" height="24" rx="12"/>
+      <text class="pill-text" x="65" y="84" text-anchor="middle">Traces</text>
+      <rect class="pill" x="0" y="102" width="130" height="24" rx="12"/>
+      <text class="pill-text" x="65" y="118" text-anchor="middle">APM</text>
+      <rect class="pill" x="0" y="136" width="130" height="24" rx="12"/>
+      <text class="pill-text" x="65" y="152" text-anchor="middle">Alerting</text>
+    </g>
+  </g>
+</svg>

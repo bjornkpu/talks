@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 340" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#F7675E"/>
+    </marker>
+    <marker id="arr-cyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#49D7FF"/>
+    </marker>
+    <style>
+      .h { fill: #F7675E; font-size: 22px; font-weight: 700; letter-spacing: 0.06em; }
+      .sub { fill: #A1A7AE; font-size: 14px; font-style: italic; }
+      .endpoint { fill: #FFFFFF; font-size: 16px; font-weight: 700; letter-spacing: 0.08em; }
+      .pill { fill: rgba(247,103,94,0.18); stroke: #F7675E; stroke-width: 1.5; }
+      .pill-text { fill: #FFFFFF; font-size: 15px; font-weight: 600; }
+      .flow { stroke: #F7675E; stroke-width: 2.5; }
+      .esc-pill { fill: rgba(73,215,255,0.12); stroke: #49D7FF; stroke-width: 1.5; }
+      .esc-text { fill: #FFFFFF; font-size: 14px; font-weight: 700; letter-spacing: 0.04em; }
+      .esc-line { stroke: #49D7FF; stroke-width: 2; stroke-dasharray: 6 6; fill: none; }
+      .note { fill: #A1A7AE; font-size: 13px; font-style: italic; }
+      .note-strong { fill: #49D7FF; font-size: 13px; font-weight: 700; }
+    </style>
+  </defs>
+
+  <text class="h" x="550" y="52" text-anchor="middle">GOLDEN PATH</text>
+  <text class="sub" x="550" y="76" text-anchor="middle">Anbefalt — ikke obligatorisk. Vi har testet den. Resten er vårt problem.</text>
+
+  <!-- main flow -->
+  <text class="endpoint" x="95" y="165" text-anchor="middle">START</text>
+  <line class="flow" x1="140" y1="160" x2="235" y2="160" marker-end="url(#arr-red)"/>
+  <rect class="pill" x="245" y="143" width="120" height="34" rx="17"/>
+  <text class="pill-text" x="305" y="165" text-anchor="middle">Build</text>
+  <line class="flow" x1="365" y1="160" x2="485" y2="160" marker-end="url(#arr-red)"/>
+  <rect class="pill" x="495" y="143" width="120" height="34" rx="17"/>
+  <text class="pill-text" x="555" y="165" text-anchor="middle">Test</text>
+  <line class="flow" x1="615" y1="160" x2="735" y2="160" marker-end="url(#arr-red)"/>
+  <rect class="pill" x="745" y="143" width="120" height="34" rx="17"/>
+  <text class="pill-text" x="805" y="165" text-anchor="middle">Deploy</text>
+  <line class="flow" x1="865" y1="160" x2="965" y2="160" marker-end="url(#arr-red)"/>
+  <text class="endpoint" x="1015" y="165" text-anchor="middle">PROD</text>
+
+  <!-- escape hatch branch -->
+  <path class="esc-line" d="M 305 177 C 305 230, 360 255, 418 255" marker-end="url(#arr-cyan)"/>
+  <rect class="esc-pill" x="430" y="238" width="170" height="34" rx="17"/>
+  <text class="esc-text" x="515" y="260" text-anchor="middle">ESCAPE HATCH</text>
+  <path class="esc-line" d="M 600 255 C 720 255, 895 235, 908 185" marker-end="url(#arr-cyan)"/>
+  <text class="note" x="515" y="298" text-anchor="middle">Team trenger Circle CI</text>
+  <text class="note-strong" x="800" y="298" text-anchor="middle">→ blir en ny golden path</text>
+</svg>

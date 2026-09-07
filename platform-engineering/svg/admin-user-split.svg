@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 460" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <style>
+      .panel { stroke-width: 1.5; stroke: rgba(255,255,255,0.2); }
+      .panel-admin { fill: rgba(247,103,94,0.08); stroke: #F7675E; }
+      .panel-user { fill: rgba(73,215,255,0.08); stroke: #49D7FF; }
+      .panel-title { fill: #FFFFFF; font-size: 22px; font-weight: 700; letter-spacing: 0.04em; }
+      .panel-sub { fill: #A1A7AE; font-size: 13px; font-style: italic; }
+      .item { fill: rgba(255,255,255,0.05); stroke: rgba(255,255,255,0.18); stroke-width: 1; }
+      .item-text { fill: #FFFFFF; font-size: 14px; font-weight: 500; }
+      .center-tool { fill: #1A1B1C; stroke: #FFFFFF; stroke-width: 1.5; }
+      .center-text { fill: #FFFFFF; font-size: 13px; font-weight: 700; }
+      .center-sub { fill: #A1A7AE; font-size: 11px; }
+      .owner { fill: #FFFFFF; font-size: 14px; font-weight: 700; letter-spacing: 0.04em; }
+      .owner-admin { fill: #F7675E; }
+      .owner-user { fill: #49D7FF; }
+      .arrow-line { stroke: rgba(255,255,255,0.4); stroke-width: 1; fill: none; }
+    </style>
+  </defs>
+
+  <!-- Center tool stack -->
+  <g transform="translate(490, 80)">
+    <rect class="center-tool" width="120" height="36" rx="4"/>
+    <text class="center-text" x="60" y="22" text-anchor="middle">Kubernetes</text>
+
+    <rect class="center-tool" y="50" width="120" height="36" rx="4"/>
+    <text class="center-text" x="60" y="72" text-anchor="middle">CI/CD</text>
+
+    <rect class="center-tool" y="100" width="120" height="36" rx="4"/>
+    <text class="center-text" x="60" y="122" text-anchor="middle">Registry</text>
+
+    <rect class="center-tool" y="150" width="120" height="36" rx="4"/>
+    <text class="center-text" x="60" y="172" text-anchor="middle">Database</text>
+
+    <rect class="center-tool" y="200" width="120" height="36" rx="4"/>
+    <text class="center-text" x="60" y="222" text-anchor="middle">Secrets</text>
+  </g>
+
+  <!-- Admin side panel - left -->
+  <g transform="translate(40, 30)">
+    <rect class="panel panel-admin" width="400" height="340" rx="8"/>
+    <text class="panel-title" x="20" y="34">ADMIN SIDE</text>
+    <text class="panel-sub" x="20" y="56">Å gjøre verktøyet klart til bruk</text>
+
+    <rect class="item" x="20" y="76" width="170" height="34" rx="3"/>
+    <text class="item-text" x="30" y="98">Provisioning</text>
+
+    <rect class="item" x="200" y="76" width="180" height="34" rx="3"/>
+    <text class="item-text" x="210" y="98">Konfigurasjon</text>
+
+    <rect class="item" x="20" y="120" width="170" height="34" rx="3"/>
+    <text class="item-text" x="30" y="142">Hardening</text>
+
+    <rect class="item" x="200" y="120" width="180" height="34" rx="3"/>
+    <text class="item-text" x="210" y="142">Backup &amp; recovery</text>
+
+    <rect class="item" x="20" y="164" width="170" height="34" rx="3"/>
+    <text class="item-text" x="30" y="186">Access &amp; RBAC</text>
+
+    <rect class="item" x="200" y="164" width="180" height="34" rx="3"/>
+    <text class="item-text" x="210" y="186">Plugins / extensions</text>
+
+    <rect class="item" x="20" y="208" width="170" height="34" rx="3"/>
+    <text class="item-text" x="30" y="230">Versjons-oppgraderinger</text>
+
+    <rect class="item" x="200" y="208" width="180" height="34" rx="3"/>
+    <text class="item-text" x="210" y="230">Patcher &amp; CVEs</text>
+
+    <rect class="item" x="20" y="252" width="360" height="34" rx="3"/>
+    <text class="item-text" x="30" y="274">Compliance &amp; audit-grunnlag</text>
+
+    <text class="owner owner-admin" x="200" y="318" text-anchor="middle">PLATFORM-TEAMET EIER</text>
+  </g>
+
+  <!-- User side panel - right -->
+  <g transform="translate(660, 30)">
+    <rect class="panel panel-user" width="400" height="340" rx="8"/>
+    <text class="panel-title" x="20" y="34">USER SIDE</text>
+    <text class="panel-sub" x="20" y="56">Å bruke verktøyet til å levere software</text>
+
+    <rect class="item" x="20" y="76" width="170" height="34" rx="3"/>
+    <text class="item-text" x="30" y="98">Skrive pipeline</text>
+
+    <rect class="item" x="200" y="76" width="180" height="34" rx="3"/>
+    <text class="item-text" x="210" y="98">Deploye manifest</text>
+
+    <rect class="item" x="20" y="120" width="170" height="34" rx="3"/>
+    <text class="item-text" x="30" y="142">Definere services</text>
+
+    <rect class="item" x="200" y="120" width="180" height="34" rx="3"/>
+    <text class="item-text" x="210" y="142">Query database</text>
+
+    <rect class="item" x="20" y="164" width="170" height="34" rx="3"/>
+    <text class="item-text" x="30" y="186">Kjøre tester</text>
+
+    <rect class="item" x="200" y="164" width="180" height="34" rx="3"/>
+    <text class="item-text" x="210" y="186">Rulle ut til prod</text>
+
+    <rect class="item" x="20" y="208" width="170" height="34" rx="3"/>
+    <text class="item-text" x="30" y="230">Lese logger</text>
+
+    <rect class="item" x="200" y="208" width="180" height="34" rx="3"/>
+    <text class="item-text" x="210" y="230">Onboarding av tjeneste</text>
+
+    <rect class="item" x="20" y="252" width="360" height="34" rx="3"/>
+    <text class="item-text" x="30" y="274">Daglig levering av forretningsverdi</text>
+
+    <text class="owner owner-user" x="200" y="318" text-anchor="middle">PRODUKTTEAMET EIER</text>
+  </g>
+
+  <!-- Connecting arrows from tools to each panel -->
+  <path class="arrow-line" d="M 490 200 L 440 200" stroke="#F7675E" stroke-width="1.2"/>
+  <path class="arrow-line" d="M 610 200 L 660 200" stroke="#49D7FF" stroke-width="1.2"/>
+
+  <!-- Bottom caption -->
+  <text x="550" y="420" text-anchor="middle" fill="#FFFFFF" font-size="16" font-style="italic" font-weight="500">
+    Samme verktøy. To forskjellige fag. Egne sertifiseringer.
+  </text>
+  <text x="550" y="440" text-anchor="middle" fill="#A1A7AE" font-size="13">
+    Når en utvikler skal kunne begge — det er der den kognitive lasten kommer fra.
+  </text>
+</svg>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 460" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <style>
+      .team-card { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.18); stroke-width: 1.2; }
+      .team-label { fill: #FFFFFF; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; }
+      .stack-pill { stroke-width: 1; }
+      .pill-text { fill: #FFFFFF; font-size: 9.5px; font-weight: 600; }
+      .sec-card { fill: rgba(247,103,94,0.12); stroke: #F7675E; stroke-width: 1.5; stroke-dasharray: 4 3; }
+      .sec-label { fill: #F7675E; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; }
+      .sec-sub { fill: #A1A7AE; font-size: 11px; font-style: italic; }
+    </style>
+  </defs>
+
+  <!-- 10 teams in 2 rows × 5 cols -->
+  <!-- Row 1 -->
+  <g transform="translate(40,30)">
+    <rect class="team-card" width="190" height="130" rx="6"/>
+    <text class="team-label" x="14" y="22">TEAM A</text>
+    <rect class="stack-pill" x="14" y="36" width="58" height="20" rx="3" fill="#3366FF" stroke="#3366FF"/><text class="pill-text" x="43" y="50" text-anchor="middle">Jenkins</text>
+    <rect class="stack-pill" x="80" y="36" width="58" height="20" rx="3" fill="#2C8F92" stroke="#2C8F92"/><text class="pill-text" x="109" y="50" text-anchor="middle">EKS</text>
+    <rect class="stack-pill" x="14" y="62" width="58" height="20" rx="3" fill="#B0A7FF" stroke="#B0A7FF"/><text class="pill-text" x="43" y="76" text-anchor="middle">ECR</text>
+    <rect class="stack-pill" x="80" y="62" width="58" height="20" rx="3" fill="#49D7FF" stroke="#49D7FF"/><text class="pill-text" x="109" y="76" text-anchor="middle">Datadog</text>
+    <rect class="stack-pill" x="14" y="88" width="124" height="20" rx="3" fill="#A1A7AE" stroke="#A1A7AE"/><text class="pill-text" x="76" y="102" text-anchor="middle" fill="#000">Vault</text>
+  </g>
+  <g transform="translate(245,30)">
+    <rect class="team-card" width="190" height="130" rx="6"/>
+    <text class="team-label" x="14" y="22">TEAM B</text>
+    <rect class="stack-pill" x="14" y="36" width="58" height="20" rx="3" fill="#F7675E" stroke="#F7675E"/><text class="pill-text" x="43" y="50" text-anchor="middle">GH Actions</text>
+    <rect class="stack-pill" x="80" y="36" width="58" height="20" rx="3" fill="#2C8F92" stroke="#2C8F92"/><text class="pill-text" x="109" y="50" text-anchor="middle">AKS</text>
+    <rect class="stack-pill" x="14" y="62" width="58" height="20" rx="3" fill="#3366FF" stroke="#3366FF"/><text class="pill-text" x="43" y="76" text-anchor="middle">ACR</text>
+    <rect class="stack-pill" x="80" y="62" width="58" height="20" rx="3" fill="#B0A7FF" stroke="#B0A7FF"/><text class="pill-text" x="109" y="76" text-anchor="middle">Grafana</text>
+    <rect class="stack-pill" x="14" y="88" width="124" height="20" rx="3" fill="#A1A7AE" stroke="#A1A7AE"/><text class="pill-text" x="76" y="102" text-anchor="middle" fill="#000">SOPS</text>
+  </g>
+  <g transform="translate(450,30)">
+    <rect class="team-card" width="190" height="130" rx="6"/>
+    <text class="team-label" x="14" y="22">TEAM C</text>
+    <rect class="stack-pill" x="14" y="36" width="58" height="20" rx="3" fill="#3366FF" stroke="#3366FF"/><text class="pill-text" x="43" y="50" text-anchor="middle">GitLab CI</text>
+    <rect class="stack-pill" x="80" y="36" width="58" height="20" rx="3" fill="#F7675E" stroke="#F7675E"/><text class="pill-text" x="109" y="50" text-anchor="middle">k3s</text>
+    <rect class="stack-pill" x="14" y="62" width="58" height="20" rx="3" fill="#49D7FF" stroke="#49D7FF"/><text class="pill-text" x="43" y="76" text-anchor="middle">Harbor</text>
+    <rect class="stack-pill" x="80" y="62" width="58" height="20" rx="3" fill="#2C8F92" stroke="#2C8F92"/><text class="pill-text" x="109" y="76" text-anchor="middle">Prom.</text>
+    <rect class="stack-pill" x="14" y="88" width="124" height="20" rx="3" fill="#A1A7AE" stroke="#A1A7AE"/><text class="pill-text" x="76" y="102" text-anchor="middle" fill="#000">Vault</text>
+  </g>
+  <g transform="translate(655,30)">
+    <rect class="team-card" width="190" height="130" rx="6"/>
+    <text class="team-label" x="14" y="22">TEAM D</text>
+    <rect class="stack-pill" x="14" y="36" width="58" height="20" rx="3" fill="#B0A7FF" stroke="#B0A7FF"/><text class="pill-text" x="43" y="50" text-anchor="middle">CircleCI</text>
+    <rect class="stack-pill" x="80" y="36" width="58" height="20" rx="3" fill="#2C8F92" stroke="#2C8F92"/><text class="pill-text" x="109" y="50" text-anchor="middle">GKE</text>
+    <rect class="stack-pill" x="14" y="62" width="58" height="20" rx="3" fill="#F7675E" stroke="#F7675E"/><text class="pill-text" x="43" y="76" text-anchor="middle">GCR</text>
+    <rect class="stack-pill" x="80" y="62" width="58" height="20" rx="3" fill="#49D7FF" stroke="#49D7FF"/><text class="pill-text" x="109" y="76" text-anchor="middle">NewRelic</text>
+    <rect class="stack-pill" x="14" y="88" width="124" height="20" rx="3" fill="#A1A7AE" stroke="#A1A7AE"/><text class="pill-text" x="76" y="102" text-anchor="middle" fill="#000">GSM</text>
+  </g>
+  <g transform="translate(860,30)">
+    <rect class="team-card" width="190" height="130" rx="6"/>
+    <text class="team-label" x="14" y="22">TEAM E</text>
+    <rect class="stack-pill" x="14" y="36" width="58" height="20" rx="3" fill="#3366FF" stroke="#3366FF"/><text class="pill-text" x="43" y="50" text-anchor="middle">Buildkite</text>
+    <rect class="stack-pill" x="80" y="36" width="58" height="20" rx="3" fill="#F7675E" stroke="#F7675E"/><text class="pill-text" x="109" y="50" text-anchor="middle">Nomad</text>
+    <rect class="stack-pill" x="14" y="62" width="58" height="20" rx="3" fill="#B0A7FF" stroke="#B0A7FF"/><text class="pill-text" x="43" y="76" text-anchor="middle">Docker Hub</text>
+    <rect class="stack-pill" x="80" y="62" width="58" height="20" rx="3" fill="#2C8F92" stroke="#2C8F92"/><text class="pill-text" x="109" y="76" text-anchor="middle">Loki</text>
+    <rect class="stack-pill" x="14" y="88" width="124" height="20" rx="3" fill="#A1A7AE" stroke="#A1A7AE"/><text class="pill-text" x="76" y="102" text-anchor="middle" fill="#000">Doppler</text>
+  </g>
+
+  <!-- Row 2 -->
+  <g transform="translate(40,180)">
+    <rect class="team-card" width="190" height="130" rx="6"/>
+    <text class="team-label" x="14" y="22">TEAM F</text>
+    <rect class="stack-pill" x="14" y="36" width="58" height="20" rx="3" fill="#F7675E" stroke="#F7675E"/><text class="pill-text" x="43" y="50" text-anchor="middle">TeamCity</text>
+    <rect class="stack-pill" x="80" y="36" width="58" height="20" rx="3" fill="#2C8F92" stroke="#2C8F92"/><text class="pill-text" x="109" y="50" text-anchor="middle">EKS</text>
+    <rect class="stack-pill" x="14" y="62" width="58" height="20" rx="3" fill="#49D7FF" stroke="#49D7FF"/><text class="pill-text" x="43" y="76" text-anchor="middle">ECR</text>
+    <rect class="stack-pill" x="80" y="62" width="58" height="20" rx="3" fill="#3366FF" stroke="#3366FF"/><text class="pill-text" x="109" y="76" text-anchor="middle">Splunk</text>
+    <rect class="stack-pill" x="14" y="88" width="124" height="20" rx="3" fill="#A1A7AE" stroke="#A1A7AE"/><text class="pill-text" x="76" y="102" text-anchor="middle" fill="#000">CyberArk</text>
+  </g>
+  <g transform="translate(245,180)">
+    <rect class="team-card" width="190" height="130" rx="6"/>
+    <text class="team-label" x="14" y="22">TEAM G</text>
+    <rect class="stack-pill" x="14" y="36" width="58" height="20" rx="3" fill="#3366FF" stroke="#3366FF"/><text class="pill-text" x="43" y="50" text-anchor="middle">Drone</text>
+    <rect class="stack-pill" x="80" y="36" width="58" height="20" rx="3" fill="#B0A7FF" stroke="#B0A7FF"/><text class="pill-text" x="109" y="50" text-anchor="middle">AKS</text>
+    <rect class="stack-pill" x="14" y="62" width="58" height="20" rx="3" fill="#2C8F92" stroke="#2C8F92"/><text class="pill-text" x="43" y="76" text-anchor="middle">Quay</text>
+    <rect class="stack-pill" x="80" y="62" width="58" height="20" rx="3" fill="#F7675E" stroke="#F7675E"/><text class="pill-text" x="109" y="76" text-anchor="middle">ELK</text>
+    <rect class="stack-pill" x="14" y="88" width="124" height="20" rx="3" fill="#A1A7AE" stroke="#A1A7AE"/><text class="pill-text" x="76" y="102" text-anchor="middle" fill="#000">Vault</text>
+  </g>
+  <g transform="translate(450,180)">
+    <rect class="team-card" width="190" height="130" rx="6"/>
+    <text class="team-label" x="14" y="22">TEAM H</text>
+    <rect class="stack-pill" x="14" y="36" width="58" height="20" rx="3" fill="#F7675E" stroke="#F7675E"/><text class="pill-text" x="43" y="50" text-anchor="middle">GH Actions</text>
+    <rect class="stack-pill" x="80" y="36" width="58" height="20" rx="3" fill="#3366FF" stroke="#3366FF"/><text class="pill-text" x="109" y="50" text-anchor="middle">EKS</text>
+    <rect class="stack-pill" x="14" y="62" width="58" height="20" rx="3" fill="#B0A7FF" stroke="#B0A7FF"/><text class="pill-text" x="43" y="76" text-anchor="middle">ECR</text>
+    <rect class="stack-pill" x="80" y="62" width="58" height="20" rx="3" fill="#49D7FF" stroke="#49D7FF"/><text class="pill-text" x="109" y="76" text-anchor="middle">Datadog</text>
+    <rect class="stack-pill" x="14" y="88" width="124" height="20" rx="3" fill="#A1A7AE" stroke="#A1A7AE"/><text class="pill-text" x="76" y="102" text-anchor="middle" fill="#000">SealedSecrets</text>
+  </g>
+  <g transform="translate(655,180)">
+    <rect class="team-card" width="190" height="130" rx="6"/>
+    <text class="team-label" x="14" y="22">TEAM I</text>
+    <rect class="stack-pill" x="14" y="36" width="58" height="20" rx="3" fill="#2C8F92" stroke="#2C8F92"/><text class="pill-text" x="43" y="50" text-anchor="middle">Argo WF</text>
+    <rect class="stack-pill" x="80" y="36" width="58" height="20" rx="3" fill="#F7675E" stroke="#F7675E"/><text class="pill-text" x="109" y="50" text-anchor="middle">OpenShift</text>
+    <rect class="stack-pill" x="14" y="62" width="58" height="20" rx="3" fill="#3366FF" stroke="#3366FF"/><text class="pill-text" x="43" y="76" text-anchor="middle">Quay</text>
+    <rect class="stack-pill" x="80" y="62" width="58" height="20" rx="3" fill="#B0A7FF" stroke="#B0A7FF"/><text class="pill-text" x="109" y="76" text-anchor="middle">Dynatrace</text>
+    <rect class="stack-pill" x="14" y="88" width="124" height="20" rx="3" fill="#A1A7AE" stroke="#A1A7AE"/><text class="pill-text" x="76" y="102" text-anchor="middle" fill="#000">Conjur</text>
+  </g>
+  <g transform="translate(860,180)">
+    <rect class="team-card" width="190" height="130" rx="6"/>
+    <text class="team-label" x="14" y="22">TEAM J</text>
+    <rect class="stack-pill" x="14" y="36" width="58" height="20" rx="3" fill="#B0A7FF" stroke="#B0A7FF"/><text class="pill-text" x="43" y="50" text-anchor="middle">Bitbucket</text>
+    <rect class="stack-pill" x="80" y="36" width="58" height="20" rx="3" fill="#3366FF" stroke="#3366FF"/><text class="pill-text" x="109" y="50" text-anchor="middle">VMs</text>
+    <rect class="stack-pill" x="14" y="62" width="58" height="20" rx="3" fill="#49D7FF" stroke="#49D7FF"/><text class="pill-text" x="43" y="76" text-anchor="middle">Nexus</text>
+    <rect class="stack-pill" x="80" y="62" width="58" height="20" rx="3" fill="#F7675E" stroke="#F7675E"/><text class="pill-text" x="109" y="76" text-anchor="middle">Splunk</text>
+    <rect class="stack-pill" x="14" y="88" width="124" height="20" rx="3" fill="#A1A7AE" stroke="#A1A7AE"/><text class="pill-text" x="76" y="102" text-anchor="middle" fill="#000">.env-filer</text>
+  </g>
+
+  <!-- Lonely security team trying to see across -->
+  <g transform="translate(380,355)">
+    <rect class="sec-card" width="340" height="80" rx="6"/>
+    <text class="sec-label" x="20" y="34">SECURITY &amp; COMPLIANCE</text>
+    <text class="sec-sub" x="20" y="56">Ett team. Ti stacker. Null oversikt.</text>
+    <text class="sec-sub" x="20" y="71" fill="#F7675E">"Hvordan er state-of-secrets på tvers?"</text>
+  </g>
+</svg>

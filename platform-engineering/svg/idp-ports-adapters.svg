@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Ports & Adapters view: for each plane, 3 representative ports (component needs)
+  with 2 adapter examples (concrete implementations) per port.
+  Five columns, one per plane, color-matched to slide 11.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 360" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <style>
+      .col-panel { stroke-width: 1.5; fill: rgba(255,255,255,0.02); }
+      .panel-dev { stroke: #49D7FF; }
+      .panel-int { stroke: #B0A7FF; }
+      .panel-res { stroke: #2C8F92; }
+      .panel-sec { stroke: #F7675E; }
+      .panel-obs { stroke: #3366FF; }
+      .heading { font-size: 13px; font-weight: 700; letter-spacing: 0.06em; }
+      .h-dev { fill: #49D7FF; }
+      .h-int { fill: #B0A7FF; }
+      .h-res { fill: #2C8F92; }
+      .h-sec { fill: #F7675E; }
+      .h-obs { fill: #3366FF; }
+      .port-dev { fill: rgba(73,215,255,0.18); stroke: #49D7FF; stroke-width: 1.5; }
+      .port-int { fill: rgba(176,167,255,0.18); stroke: #B0A7FF; stroke-width: 1.5; }
+      .port-res { fill: rgba(44,143,146,0.18); stroke: #2C8F92; stroke-width: 1.5; }
+      .port-sec { fill: rgba(247,103,94,0.18); stroke: #F7675E; stroke-width: 1.5; }
+      .port-obs { fill: rgba(51,102,255,0.18); stroke: #3366FF; stroke-width: 1.5; }
+      .port-text { fill: #FFFFFF; font-size: 12px; font-weight: 600; }
+      .adapter { fill: none; stroke: rgba(255,255,255,0.35); stroke-width: 1; }
+      .adapter-text { fill: #FFFFFF; font-size: 11px; font-weight: 400; opacity: 0.85; }
+      .connector { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 2 2; }
+    </style>
+  </defs>
+  <g transform="translate(10, 10)">
+    <rect class="col-panel panel-dev" width="200" height="340" rx="8"/>
+    <text class="heading h-dev" x="100" y="28" text-anchor="middle">DEVELOPER CONTROL</text>
+    <g transform="translate(0, 50)">
+      <rect class="port-dev" x="35" y="0" width="130" height="26" rx="13"/>
+      <text class="port-text" x="100" y="17" text-anchor="middle">Workload-spec</text>
+      <line class="connector" x1="100" y1="26" x2="100" y2="36"/>
+      <rect class="adapter" x="45" y="36" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="50" text-anchor="middle">Score</text>
+      <rect class="adapter" x="45" y="60" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="74" text-anchor="middle">KubeVela</text>
+    </g>
+    <g transform="translate(0, 140)">
+      <rect class="port-dev" x="35" y="0" width="130" height="26" rx="13"/>
+      <text class="port-text" x="100" y="17" text-anchor="middle">Portal</text>
+      <line class="connector" x1="100" y1="26" x2="100" y2="36"/>
+      <rect class="adapter" x="45" y="36" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="50" text-anchor="middle">Backstage</text>
+      <rect class="adapter" x="45" y="60" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="74" text-anchor="middle">Port</text>
+    </g>
+    <g transform="translate(0, 230)">
+      <rect class="port-dev" x="35" y="0" width="130" height="26" rx="13"/>
+      <text class="port-text" x="100" y="17" text-anchor="middle">CLI</text>
+      <line class="connector" x1="100" y1="26" x2="100" y2="36"/>
+      <rect class="adapter" x="45" y="36" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="50" text-anchor="middle">Cobra-based</text>
+      <rect class="adapter" x="45" y="60" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="74" text-anchor="middle">Argo CLI</text>
+    </g>
+  </g>
+  <g transform="translate(230, 10)">
+    <rect class="col-panel panel-int" width="200" height="340" rx="8"/>
+    <text class="heading h-int" x="100" y="28" text-anchor="middle">INTEGRATION &amp; DELIVERY</text>
+    <g transform="translate(0, 50)">
+      <rect class="port-int" x="35" y="0" width="130" height="26" rx="13"/>
+      <text class="port-text" x="100" y="17" text-anchor="middle">Versjonskontroll</text>
+      <line class="connector" x1="100" y1="26" x2="100" y2="36"/>
+      <rect class="adapter" x="45" y="36" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="50" text-anchor="middle">GitHub</text>
+      <rect class="adapter" x="45" y="60" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="74" text-anchor="middle">GitLab</text>
+    </g>
+    <g transform="translate(0, 140)">
+      <rect class="port-int" x="35" y="0" width="130" height="26" rx="13"/>
+      <text class="port-text" x="100" y="17" text-anchor="middle">CD</text>
+      <line class="connector" x1="100" y1="26" x2="100" y2="36"/>
+      <rect class="adapter" x="45" y="36" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="50" text-anchor="middle">ArgoCD</text>
+      <rect class="adapter" x="45" y="60" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="74" text-anchor="middle">Flux</text>
+    </g>
+    <g transform="translate(0, 230)">
+      <rect class="port-int" x="35" y="0" width="130" height="26" rx="13"/>
+      <text class="port-text" x="100" y="17" text-anchor="middle">Orchestrator</text>
+      <line class="connector" x1="100" y1="26" x2="100" y2="36"/>
+      <rect class="adapter" x="45" y="36" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="50" text-anchor="middle">Crossplane</text>
+      <rect class="adapter" x="45" y="60" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="74" text-anchor="middle">Kratix</text>
+    </g>
+  </g>
+  <g transform="translate(450, 10)">
+    <rect class="col-panel panel-res" width="200" height="340" rx="8"/>
+    <text class="heading h-res" x="100" y="28" text-anchor="middle">RESOURCE</text>
+    <g transform="translate(0, 50)">
+      <rect class="port-res" x="35" y="0" width="130" height="26" rx="13"/>
+      <text class="port-text" x="100" y="17" text-anchor="middle">Compute</text>
+      <line class="connector" x1="100" y1="26" x2="100" y2="36"/>
+      <rect class="adapter" x="45" y="36" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="50" text-anchor="middle">AKS</text>
+      <rect class="adapter" x="45" y="60" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="74" text-anchor="middle">EKS</text>
+    </g>
+    <g transform="translate(0, 140)">
+      <rect class="port-res" x="35" y="0" width="130" height="26" rx="13"/>
+      <text class="port-text" x="100" y="17" text-anchor="middle">Database</text>
+      <line class="connector" x1="100" y1="26" x2="100" y2="36"/>
+      <rect class="adapter" x="45" y="36" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="50" text-anchor="middle">PostgreSQL</text>
+      <rect class="adapter" x="45" y="60" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="74" text-anchor="middle">MongoDB</text>
+    </g>
+    <g transform="translate(0, 230)">
+      <rect class="port-res" x="35" y="0" width="130" height="26" rx="13"/>
+      <text class="port-text" x="100" y="17" text-anchor="middle">Object storage</text>
+      <line class="connector" x1="100" y1="26" x2="100" y2="36"/>
+      <rect class="adapter" x="45" y="36" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="50" text-anchor="middle">Azure Blob</text>
+      <rect class="adapter" x="45" y="60" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="74" text-anchor="middle">S3</text>
+    </g>
+  </g>
+  <g transform="translate(670, 10)">
+    <rect class="col-panel panel-sec" width="200" height="340" rx="8"/>
+    <text class="heading h-sec" x="100" y="28" text-anchor="middle">SECURITY</text>
+    <g transform="translate(0, 50)">
+      <rect class="port-sec" x="35" y="0" width="130" height="26" rx="13"/>
+      <text class="port-text" x="100" y="17" text-anchor="middle">Secrets</text>
+      <line class="connector" x1="100" y1="26" x2="100" y2="36"/>
+      <rect class="adapter" x="45" y="36" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="50" text-anchor="middle">Vault</text>
+      <rect class="adapter" x="45" y="60" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="74" text-anchor="middle">Sealed Secrets</text>
+    </g>
+    <g transform="translate(0, 140)">
+      <rect class="port-sec" x="35" y="0" width="130" height="26" rx="13"/>
+      <text class="port-text" x="100" y="17" text-anchor="middle">Policy</text>
+      <line class="connector" x1="100" y1="26" x2="100" y2="36"/>
+      <rect class="adapter" x="45" y="36" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="50" text-anchor="middle">OPA</text>
+      <rect class="adapter" x="45" y="60" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="74" text-anchor="middle">Kyverno</text>
+    </g>
+    <g transform="translate(0, 230)">
+      <rect class="port-sec" x="35" y="0" width="130" height="26" rx="13"/>
+      <text class="port-text" x="100" y="17" text-anchor="middle">Identity</text>
+      <line class="connector" x1="100" y1="26" x2="100" y2="36"/>
+      <rect class="adapter" x="45" y="36" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="50" text-anchor="middle">Entra ID</text>
+      <rect class="adapter" x="45" y="60" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="74" text-anchor="middle">Keycloak</text>
+    </g>
+  </g>
+  <g transform="translate(890, 10)">
+    <rect class="col-panel panel-obs" width="200" height="340" rx="8"/>
+    <text class="heading h-obs" x="100" y="28" text-anchor="middle">OBSERVABILITY</text>
+    <g transform="translate(0, 50)">
+      <rect class="port-obs" x="35" y="0" width="130" height="26" rx="13"/>
+      <text class="port-text" x="100" y="17" text-anchor="middle">Metrics</text>
+      <line class="connector" x1="100" y1="26" x2="100" y2="36"/>
+      <rect class="adapter" x="45" y="36" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="50" text-anchor="middle">Prometheus</text>
+      <rect class="adapter" x="45" y="60" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="74" text-anchor="middle">Datadog</text>
+    </g>
+    <g transform="translate(0, 140)">
+      <rect class="port-obs" x="35" y="0" width="130" height="26" rx="13"/>
+      <text class="port-text" x="100" y="17" text-anchor="middle">Logger</text>
+      <line class="connector" x1="100" y1="26" x2="100" y2="36"/>
+      <rect class="adapter" x="45" y="36" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="50" text-anchor="middle">Loki</text>
+      <rect class="adapter" x="45" y="60" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="74" text-anchor="middle">ELK</text>
+    </g>
+    <g transform="translate(0, 230)">
+      <rect class="port-obs" x="35" y="0" width="130" height="26" rx="13"/>
+      <text class="port-text" x="100" y="17" text-anchor="middle">Traces</text>
+      <line class="connector" x1="100" y1="26" x2="100" y2="36"/>
+      <rect class="adapter" x="45" y="36" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="50" text-anchor="middle">Tempo</text>
+      <rect class="adapter" x="45" y="60" width="110" height="20" rx="10"/>
+      <text class="adapter-text" x="100" y="74" text-anchor="middle">Jaeger</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Icons (icons/*.png) are overlaid as HTML <img> by .flight-simulator CSS —
+     external SVG loaded via <img> cannot load external raster files itself. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 380" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#F7675E"/>
+    </marker>
+    <style>
+      .panel { stroke-width: 1.5; }
+      .p-sim { fill: rgba(73,215,255,0.06); stroke: #49D7FF; }
+      .p-real { fill: rgba(247,103,94,0.06); stroke: #F7675E; }
+      .heading { font-size: 22px; font-weight: 700; letter-spacing: 0.04em; fill: #FFFFFF; }
+      .h-sim { fill: #49D7FF; }
+      .h-real { fill: #F7675E; }
+      .stake-label { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; }
+      .stake-low { fill: #49D7FF; }
+      .stake-high { fill: #F7675E; }
+      .item { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.18); stroke-width: 1; }
+      .item-text { fill: #FFFFFF; font-size: 13px; font-weight: 500; }
+    </style>
+  </defs>
+  <g transform="translate(40, 40)">
+    <rect class="panel p-sim" width="430" height="300" rx="8"/>
+    <text class="heading h-sim" x="215" y="200" text-anchor="middle">FLIGHT SIMULATOR</text>
+    <text class="stake-label stake-low" x="215" y="218" text-anchor="middle">LAV INNSATS — REELL LÆRING</text>
+    <g transform="translate(20, 235)">
+      <rect class="item" width="190" height="24" rx="3"/>
+      <text class="item-text" x="10" y="16">✔  Pilot-team, ikke alle</text>
+    </g>
+    <g transform="translate(220, 235)">
+      <rect class="item" width="190" height="24" rx="3"/>
+      <text class="item-text" x="10" y="16">✔  Bare non-prod</text>
+    </g>
+    <g transform="translate(20, 263)">
+      <rect class="item" width="190" height="24" rx="3"/>
+      <text class="item-text" x="10" y="16">✔  Reset-knapp finnes</text>
+    </g>
+    <g transform="translate(220, 263)">
+      <rect class="item" width="190" height="24" rx="3"/>
+      <text class="item-text" x="10" y="16">✔  Iterér på reell bruk</text>
+    </g>
+  </g>
+  <g transform="translate(495, 175)">
+    <line x1="0" y1="0" x2="100" y2="0" stroke="#F7675E" stroke-width="2.5" marker-end="url(#arr)"/>
+  </g>
+  <g transform="translate(630, 40)">
+    <rect class="panel p-real" width="430" height="300" rx="8"/>
+    <text class="heading h-real" x="215" y="200" text-anchor="middle">EKTE FLYVNING</text>
+    <text class="stake-label stake-high" x="215" y="218" text-anchor="middle">HØY INNSATS — KOMMER SENERE</text>
+    <g transform="translate(20, 235)">
+      <rect class="item" width="190" height="24" rx="3"/>
+      <text class="item-text" x="10" y="16">⚠  Produksjonstrafikk</text>
+    </g>
+    <g transform="translate(220, 235)">
+      <rect class="item" width="190" height="24" rx="3"/>
+      <text class="item-text" x="10" y="16">⚠  Compliance-krav</text>
+    </g>
+    <g transform="translate(20, 263)">
+      <rect class="item" width="190" height="24" rx="3"/>
+      <text class="item-text" x="10" y="16">⚠  Ingen reset-knapp</text>
+    </g>
+    <g transform="translate(220, 263)">
+      <rect class="item" width="190" height="24" rx="3"/>
+      <text class="item-text" x="10" y="16">⚠  Ekte konsekvenser</text>
+    </g>
+  </g>
+</svg>

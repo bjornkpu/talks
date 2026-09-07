@@ -1,0 +1,297 @@
+/* @theme hvorfor-platform-engineering */
+/* Deck-local styles for "Hvorfor Platform Engineering". Extends software-one. */
+
+@import 'software-one';
+
+/* Caption text below figures — leaves clearance for the bottom-right logo */
+.caption { padding-right: 10rem; }
+
+/* Card boxes — used by columns-3 stat cards (regnestykker) and anti-pattern cards.
+   Mirrors the panel style in the svg diagrams: brand color stroke + faint tint. */
+.box {
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 20px 22px;
+  background: rgba(255, 255, 255, 0.04);
+}
+.box h3 { margin-top: 0; }
+.box p:last-child { margin-bottom: 0; }
+/* equal card heights when siblings in a columns grid (theme sets align-items: start) */
+.columns-2:has(> .box), .columns-3:has(> .box) { align-items: stretch; }
+.columns-2 > .box, .columns-3 > .box { box-sizing: border-box; }
+/* room between a card row and the line that follows it */
+.columns-3, .columns-2:has(> .box) { margin-bottom: 24px; }
+.box--success { border-color: #2C8F92; background: rgba(44, 143, 146, 0.06); }
+.box--success h3 { color: #2C8F92; }
+.box--warning { border-color: #F7675E; background: rgba(247, 103, 94, 0.06); }
+.box--warning h3 { color: #F7675E; }
+.box--info { border-color: #49D7FF; background: rgba(73, 215, 255, 0.06); }
+.box--info h3 { color: #49D7FF; }
+
+/* `_class: accent` — quote slides, vertically centered so they don't hang at the top */
+section.accent { justify-content: center; }
+section.accent blockquote { font-size: 26px; margin-bottom: 28px; }
+
+/* Isometric deco icons (brand: "Isometric Graphics for Presentations") —
+   absolutely positioned right side, clear of the bottom-right logo */
+.deco-icon { position: absolute; pointer-events: none; height: auto; }
+.deco-mid    { right: 70px;  top: 190px; width: 290px; }  /* right side free of text */
+.deco-low    { right: 190px; top: 395px; width: 250px; }  /* full-width text above */
+.deco-center { right: 96px;  top: 50%; transform: translateY(-50%); width: 340px; }  /* section breaks */
+/* accent slide with a deco icon: wrap text before the icon */
+section.has-deco p { max-width: 720px; }
+
+/* Smaller figure for tall diagrams whose caption would otherwise land on the
+   page number (paved-road, product-vs-project) */
+.figure-small { width: 85%; margin: 0 auto; }
+.figure-small p { margin: 0; }
+.figure-small img { width: 100%; height: auto; display: block; }
+
+/* Compact timeline slide — the 2019/Team Topologies slide has more text than
+   the others and overflows onto the page number without this. The timeline-wrap
+   margins stay untouched so the timeline doesn't shift between slides during
+   the fade transition — the space comes from text size/margins instead. */
+section.compact p { margin-block: 0 0.45em; }
+section.compact .columns-2 { font-size: 20px; }
+
+/* Team Topologies figure — white panel since canonical TT colors assume light bg */
+.tt-panel {
+  background: #FFFFFF;
+  padding: 16px;
+  border-radius: 8px;
+  display: block;
+  /* leaves clearance on the right for the bottom-right logo */
+  max-width: 78%;
+}
+.tt-panel img { width: 100%; height: auto; display: block; }
+
+/* MVP / flight-simulator figure — slight shrink so caption breathes at bottom.
+   Icon overlays: external SVG in <img> can't load PNGs, so brand icons are
+   positioned as <img> on top; %-values map icon x/y/w/h to the 1100×380 viewBox. */
+.flight-simulator { width: 92%; margin: 0 auto; position: relative; }
+.flight-simulator p { margin: 0; }
+.flight-simulator > p > img { width: 100%; height: auto; display: block; }
+.flight-simulator .icon {
+  position: absolute;
+  width: 11.82%;
+  height: 34.21%;
+  object-fit: contain;
+  pointer-events: none;
+}
+.flight-simulator .icon-sim  { left: 17.27%; top: 18.42%; }
+.flight-simulator .icon-real { left: 70.91%; top: 18.42%; }
+
+/* Triptych figure — same icon-overlay pattern as .flight-simulator */
+.triptych { position: relative; }
+.triptych p { margin: 0; }
+.triptych > p > img { width: 100%; height: auto; display: block; }
+.triptych .icon {
+  position: absolute;
+  width: 10.91%;
+  height: 31.58%;
+  object-fit: contain;
+  pointer-events: none;
+}
+.triptych .icon-dev { left: 12.73%; top: 13.16%; }
+.triptych .icon-ops { left: 44.55%; top: 13.16%; }
+.triptych .icon-biz { left: 76.36%; top: 13.16%; }
+
+/* Generic figure shrink — wraps an external SVG <img> on slides where the image
+   pushes the caption into the bottom-right logo zone */
+.figure-tight { width: 92%; margin: 0 auto; }
+.figure-tight p { margin: 0; }
+.figure-tight img { width: 100%; height: auto; display: block; }
+
+/* Morph targets — shared names let View Transitions morph elements across slides */
+.morph-gap      { color: var(--swone-red); font-weight: 700; view-transition-name: morph-idp; }
+.morph-idp      { view-transition-name: morph-idp; }
+.morph-layer    { view-transition-name: morph-layer; }
+.morph-timeline { view-transition-name: morph-timeline; }
+.morph-now-dot  { view-transition-name: morph-now-dot; }
+
+/* Cognitive-load → IDP morph (slide 7 → 8).
+   Source: HTML overlay pills positioned over the cognitive-load SVG (the 5 hot
+   tools: Kubernetes, Terraform, Helm, Vault, YAML-suppe). Target: zero-size
+   spans inside .box.idp. HTML elements are used because SVG-internal
+   view-transitions don't fire reliably. */
+
+/* Container for SVG + overlay pills */
+.cognitive-load { position: relative; }
+
+/* Source: HTML pills overlaid on the SVG */
+.cognitive-load .tool-pill {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(247, 103, 94, 0.18);
+  border: 1.2px solid #F7675E;
+  border-radius: 999px;
+  color: #FFFFFF;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.cognitive-load .tool-pill.k8s   { left: 34.55%; top: 8.33%;  width: 10.91%; height: 7.08%; font-size: clamp(11px, 1.1vw, 15px); view-transition-name: tool-k8s; }
+.cognitive-load .tool-pill.tf    { left: 47.27%; top: 10.42%; width: 9.09%;  height: 7.08%; font-size: clamp(11px, 1.1vw, 15px); view-transition-name: tool-tf; }
+.cognitive-load .tool-pill.helm  { left: 58.18%; top: 8.33%;  width: 7.27%;  height: 7.08%; font-size: clamp(11px, 1.1vw, 15px); view-transition-name: tool-helm; }
+.cognitive-load .tool-pill.vault { left: 50%;    top: 20.83%; width: 7.27%;  height: 6.25%; font-size: clamp(10px, 1vw, 13px);   view-transition-name: tool-vault; }
+.cognitive-load .tool-pill.yaml  { left: 30.91%; top: 33.33%; width: 10.91%; height: 5.83%; font-size: clamp(10px, 1vw, 12px);   view-transition-name: tool-yaml; }
+
+/* Target: zero-size morph endpoints inside the IDP box */
+.diagram .box.idp { position: relative; }
+.morph-tool {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.morph-tool.tool-k8s   { view-transition-name: tool-k8s; }
+.morph-tool.tool-tf    { view-transition-name: tool-tf; }
+.morph-tool.tool-helm  { view-transition-name: tool-helm; }
+.morph-tool.tool-vault { view-transition-name: tool-vault; }
+.morph-tool.tool-yaml  { view-transition-name: tool-yaml; }
+
+/* `_class: hook` — single giant line centered, chrome hidden */
+section.hook {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 64px;
+}
+section.hook h1 {
+  font-size: 80px;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -0.02em;
+  max-width: 22ch;
+}
+section.hook::before,
+section.hook::after { display: none; }
+
+/* Timeline slide layout */
+section.timeline .timeline-wrap {
+  position: relative;
+  width: 100%;
+  margin: 24px 0 32px;
+}
+section.timeline .timeline-wrap p {
+  /* kill markdown's auto <p> margin around the image so .now-dot %-positioning
+     matches the SVG circle exactly (otherwise wrap height includes p margins) */
+  margin: 0;
+  padding: 0;
+}
+section.timeline .timeline-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+section.timeline .now-dot {
+  position: absolute;
+  /* 60/140 = 42.86% — matches SVG circle cy in viewBox at any container width */
+  top: 42.86%;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--swone-red);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 4px rgba(247, 103, 94, 0.25);
+}
+section.timeline .now-dot.y2009 { left: 11.8%; }
+section.timeline .now-dot.y2015 { left: 39.1%; }
+section.timeline .now-dot.y2019 { left: 63.6%; }
+section.timeline .now-dot.y2022 { left: 88.2%; }
+
+/* IDP diagram — HTML so view-transition-name works (SVG children don't morph reliably) */
+.diagram {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.diagram .box {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.25;
+  box-sizing: border-box;
+}
+.diagram .box.dev,
+.diagram .box.infra {
+  height: 200px;
+  font-size: 28px;
+  letter-spacing: 0.12em;
+}
+.diagram .box.idp {
+  height: 280px;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  background: #F7675E;
+  color: #FFFFFF;
+}
+.diagram.intro .box.dev,
+.diagram.intro .box.infra {
+  border: 1.5px dashed #A1A7AE;
+  color: #A1A7AE;
+  opacity: 0.5;
+}
+.diagram.full .box.dev {
+  background: #FFFFFF;
+  color: #000000;
+}
+.diagram.full .box.infra {
+  background: #A1A7AE;
+  color: #000000;
+}
+.diagram .arrow {
+  flex: 0 0 28px;
+  font-size: 28px;
+  color: #FFFFFF;
+  text-align: center;
+}
+.diagram .arrow.hidden { visibility: hidden; }
+
+/* Bio slide — terminal layout (whoami + ps -a).
+   Sized to fit within the safe content area (1152×500 after section padding)
+   and clear of the logo watermark in the bottom-right. */
+.neofetch {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 40px;
+  align-items: start;
+  max-width: 100%;
+  margin: 0;
+}
+.neofetch img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.neofetch pre {
+  margin: 0;
+  min-width: 0;
+  font-family: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', Consolas, ui-monospace, monospace;
+  font-size: 16px;
+  line-height: 1.4;
+  white-space: pre;
+  color: #d4d4dc;
+  padding: 14px 18px;
+}
+.neofetch pre .prompt   { color: #7cc8f8; font-weight: 700; }
+.neofetch pre .cmd      { color: #f0f0f0; font-weight: 700; }
+.neofetch pre .rule     { color: #555; }
+.neofetch pre .key      { color: #7cc8f8; font-weight: 700; }
+.neofetch pre .morph-gap { color: var(--swone-red); font-weight: 700; }
+
+/* Theme hides the footer slot on lead slides — show it in the (empty, since
+   _paginate: false) page-number slot on the thanks slide. */
+section.lead > footer { display: block; bottom: 24px; left: 64px; }

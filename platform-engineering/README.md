@@ -8,6 +8,11 @@ og hvordan man starter med en Minimum Viable Platform.
 `platform-engineering` `idp` `golden-paths` `developer-experience` `devops` `team-topologies`
 > Duration: 30 min
 
+## Slides
+
+- [Slides 2026-08-31 (HTML)](slides-2026-08-31.html)
+- [Slides 2026-08-31 (PDF)](slides-2026-08-31.pdf)
+
 ## Prerequisites
 
 - Basic understanding of cloud-native delivery (containers, CI/CD)

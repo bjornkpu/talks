@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Icons (icons/*.png) are overlaid as HTML <img> by .triptych CSS — external
+     SVG loaded via <img> cannot load external raster files itself. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 380" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <style>
+      .panel { stroke-width: 1.5; }
+      .p-dev { fill: rgba(73,215,255,0.06); stroke: #49D7FF; }
+      .p-ops { fill: rgba(176,167,255,0.06); stroke: #B0A7FF; }
+      .p-biz { fill: rgba(247,103,94,0.06); stroke: #F7675E; }
+      .heading { font-size: 22px; font-weight: 700; letter-spacing: 0.04em; fill: #FFFFFF; }
+      .h-dev { fill: #49D7FF; }
+      .h-ops { fill: #B0A7FF; }
+      .h-biz { fill: #F7675E; }
+      .item { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.2); stroke-width: 1; }
+      .item-text { fill: #FFFFFF; font-size: 13px; font-weight: 500; }
+    </style>
+  </defs>
+  <g transform="translate(40, 30)">
+    <rect class="panel p-dev" width="320" height="320" rx="8"/>
+    <text class="heading h-dev" x="160" y="180" text-anchor="middle">UTVIKLER</text>
+    <g transform="translate(20, 200)">
+      <rect class="item" width="280" height="30" rx="3"/>
+      <text class="item-text" x="14" y="20">⏱  Miljø på minutter, ikke dager</text>
+    </g>
+    <g transform="translate(20, 238)">
+      <rect class="item" width="280" height="30" rx="3"/>
+      <text class="item-text" x="14" y="20">🧠  Mindre kognitiv last</text>
+    </g>
+    <g transform="translate(20, 276)">
+      <rect class="item" width="280" height="30" rx="3"/>
+      <text class="item-text" x="14" y="20">🚀  Slipper å være infraekspert</text>
+    </g>
+  </g>
+  <g transform="translate(390, 30)">
+    <rect class="panel p-ops" width="320" height="320" rx="8"/>
+    <text class="heading h-ops" x="160" y="180" text-anchor="middle">OPS</text>
+    <g transform="translate(20, 200)">
+      <rect class="item" width="280" height="30" rx="3"/>
+      <text class="item-text" x="14" y="20">📩  Ut av ticket-helvete</text>
+    </g>
+    <g transform="translate(20, 238)">
+      <rect class="item" width="280" height="30" rx="3"/>
+      <text class="item-text" x="14" y="20">🛡  Standardisering by design</text>
+    </g>
+    <g transform="translate(20, 276)">
+      <rect class="item" width="280" height="30" rx="3"/>
+      <text class="item-text" x="14" y="20">🎯  Tid til strategisk arbeid</text>
+    </g>
+  </g>
+  <g transform="translate(740, 30)">
+    <rect class="panel p-biz" width="320" height="320" rx="8"/>
+    <text class="heading h-biz" x="160" y="180" text-anchor="middle">VIRKSOMHET</text>
+    <g transform="translate(20, 200)">
+      <rect class="item" width="280" height="30" rx="3"/>
+      <text class="item-text" x="14" y="20">⏩  Lavere lead time for change</text>
+    </g>
+    <g transform="translate(20, 238)">
+      <rect class="item" width="280" height="30" rx="3"/>
+      <text class="item-text" x="14" y="20">📉  Lavere change failure rate</text>
+    </g>
+    <g transform="translate(20, 276)">
+      <rect class="item" width="280" height="30" rx="3"/>
+      <text class="item-text" x="14" y="20">👥  Raskere onboarding av folk</text>
+    </g>
+  </g>
+</svg>
