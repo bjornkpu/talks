@@ -10,8 +10,8 @@ og hvordan man starter med en Minimum Viable Platform.
 
 ## Slides
 
-- [Slides 2026-08-31 (HTML)](slides-2026-08-31.html)
-- [Slides 2026-08-31 (PDF)](slides-2026-08-31.pdf)
+- [Slides 2026-09-07 (HTML)](slides-2026-09-07.html)
+- [Slides 2026-09-07 (PDF)](slides-2026-09-07.pdf)
 
 ## Prerequisites
 
