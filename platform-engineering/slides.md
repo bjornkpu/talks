@@ -30,21 +30,18 @@ Bjørn Kristian Punsvik
 </div>
 
 <!--
-
-[REGI]
-- la tittelen puste — ikke begynn rett på
-- 2-3 sek stillhet før første ord
-- slot: 09:00–09:40 — 40 min totalt, hold tempo
-- publikum (fra invitasjonen): CTO, tech lead, arkitekt, utvikler
-
 [STIKKORD]
 - kort velkomst — ønsk velkommen til frokostseminaret
 - dagens løp: hvorfor (meg) → pause → operators (Håvard) → Canopy live (Marius)
 
-[BAKGRUNN]
-- tidsbudsjett (tree.md, 40 min): hvorfor 5 · hva + verdi 6 · devops vs PE 3 · IDP 3 ·
-  golden paths 7 (tyngdepunktet) · produkt 4 · team 4 · ROI + anti-patterns 5 · MVP 2 · avslutning 1
+- Sjekke utgangspunktet:
 
+Hvem har hørt om Platform Engineering før?
+
+Hvis du måtte kategorisere deg:
+Infrastruktur
+Utvikler
+Foretning
 -->
 
 ---
@@ -59,15 +56,6 @@ Bjørn Kristian Punsvik
 # Utviklerne dine er blant de dyreste ressursene du har. Hva gjør de når de <span class="morph-gap">ikke skriver kode</span>?
 
 <!--
-
-[REGI]
-- spørsmålet skal henge — ikke svar
-
-[STIKKORD]
-
-[BRO]
-- klikk uten ord
-
 -->
 
 ---
@@ -82,15 +70,6 @@ Bjørn Kristian Punsvik
 # De beste ops-folkene dine <span class="morph-gap">svarer på tickets</span>. De løser ikke arkitektur.
 
 <!--
-
-[REGI]
-- spørsmålet skal henge — ikke svar
-
-[STIKKORD]
-
-[BRO]
-- pause, klikk
-
 -->
 
 ---
@@ -105,16 +84,6 @@ Bjørn Kristian Punsvik
 # De beste utviklerne dine bygger ikke produkt. De <span class="morph-gap">vedlikeholder infrastruktur</span>.
 
 <!--
-
-[REGI]
-- spørsmålet skal henge — ikke svar
-
-[STIKKORD]
-
-
-[BRO]
-- klikk inn i bio — du tar over scenen
-
 -->
 
 ---
@@ -153,23 +122,22 @@ Bjørn Kristian Punsvik
 <!--
 
 [REGI]
-- ~50 sek total
-- rolig tempo — autentisitet før autoritet
-- beats: navn (5s) → reisen som én tråd (35s) → bro (10s)
+rolig tempo
 
 [STIKKORD]
-- Bjørn, SoftwareOne, for tiden hos Enova
-- klassisk trent som software-utvikler — NTNU, TIHLDE Drift, hjemme-cluster —
-  men trives godt mot infra
-- ...og det har preget alt siden: tech lead på skybasert energiplattform (Enoco),
-  integrasjonsplattform (Equinor), nå to team hos Enova — produkt og dataplattform,
-  moderniseringsprogrammet på siden
-- lander på: "jeg ser hverdagen fra flere vinkler" — kort, ikke selg
+- Bjørn Kristian Punsvik, konsulent hos SoftwareOne, for tiden utleid til Enova
+- klassisk trent som software-utvikler fra NTNU, interreset i infra TIHLDE Drift, K8s hjemme-cluster og trives godt mot infra.
+- ...og det har satt preg på alt siden:
+  tech lead på skybasert energiplattform (Enoco),
+  Utvikler på dataplatform og mentor integrasjonsplattform (Equinor)
+  nå to team hos Enova — produkt-AI og dataplattform, moderniseringsprogrammet på siden
+
+- "jeg ser hverdagen fra flere vinkler"
 
 [BRO]
 og det jeg ser igjen og igjen: kostnaden ved manglende plattform er ikke teknisk gjeld — det er at de beste utviklerne slutter å bygge nytt og begynner å vedlikeholde sin egen versjon av infrastrukturen. Det er det vi skal snakke om i dag.
-→ klikk inn i diagnosen
 
+→ klikk inn i diagnosen
 -->
 
 ---
@@ -179,30 +147,18 @@ og det jeg ser igjen og igjen: kostnaden ved manglende plattform er ikke teknisk
 ![chaos](svg/chaos-10-stacks.svg)
 
 <!--
-
-[REGI]
-- diagnose-fasen åpner
-- pek på diagrammet — la det jobbe
-- ikke teknisk dybde, fokuser på mønsteret
-
 [STIKKORD]
 - hver boks = ett team som måtte bygge selv
 - ikke fordi de ville — fordi alternativet var ingen plattform
 - ti versjoner av samme fundament, ti måter å misforstå sikkerhet på
 - security-boksen: ingen sjanse til å håndheve compliance på ti stacker
 - "dette er hva 'vi har en plattform' ofte betyr i praksis"
-
-[POENG]
-- treffer CTO-personaen direkte — dette er kostnaden av tilfeldighet
-
-[BRO]
-- "men ikke bare på org-nivå — også per utvikler" → kognitiv last
-
-[BAKGRUNN]
-- scenarioet: ti team eier appen OG runtimen — hver velger egen CI/CD, K8s-oppsett, registry, monitoring, secrets; hvert team trenger dyp kompetanse i hvert eneste lag
+- ti team eier appen OG runtimen — hver velger egen CI/CD, K8s-oppsett, registry, monitoring, secrets; hvert team trenger dyp kompetanse i hvert eneste lag
 - selskapene som skalerte gjennom dette (Airbnb, Spotify) kom uavhengig til samme svar: legg inn et plattform-lag så utviklere self-server og ops slutter å være ticket-kø
 - organisasjonen har ikke et verktøyproblem — den har et system- og koordineringsproblem
 
+[BRO]
+- "men ikke bare på org-nivå — også per utvikler" → kognitiv last
 -->
 
 ---
@@ -283,27 +239,23 @@ og det jeg ser igjen og igjen: kostnaden ved manglende plattform er ikke teknisk
 </div>
 
 <!--
-
 [REGI]
 - nullstill perspektivet — fra org til individ
-- den kognitive lasten er problemet, ikke verktøyene
-- ikke ramse opp navnene mekanisk — la listen i seg selv være vitnesbyrd
 
 [STIKKORD]
 - for ti år siden: ett script, to verktøy
 - nå: Helm, Terraform, GitOps, OPA, Vault, Argo, Istio, OTel
+- det operasjonelle ansvaret ble dyttet på utviklerne — og fortsatt levere produkt
 - forventning: hver utvikler skal kunne alt
+- for de fleste team er det ikke empowering — det er utmattende
+
+- ikke verktøyenes feil — det er bare for mye for én person
+- den kognitive lasten er problemet
 - DevOps lovet samarbeid — cloud-native ga kompleksitet
-- ikke verktøyenes feil — det er bare for mye for én
+- "you build it, you run it" kollapset i praksis
 
 [BRO]
 - "det er det Platform Engineering svarer på" → definisjon
-
-[BAKGRUNN]
-- "you build it, you run it" kollapset i praksis til "du venter på ops for alt utover en image bump"
-- det operasjonelle ansvaret ble dyttet på utviklerne: infra, cloud primitives, CI/CD, secrets, compliance — og fortsatt levere produkt
-- for de fleste team er det ikke empowering — det er utmattende
-
 -->
 
 ---
@@ -344,12 +296,6 @@ Et skreddersydd lag mellom utvikler og infra. Et **produkt**, ikke et prosjekt.
 </div>
 
 <!--
-
-[REGI]
-- her morpher "vedlikeholder infrastruktur" inn i den røde IDP-boksen
-- la diagrammet bære
-- sidetekst kort, ikke les ord-for-ord
-
 [STIKKORD]
 - PE = disiplinen som bygger golden paths
 - self-service — uten å vente på ops
@@ -357,18 +303,11 @@ Et skreddersydd lag mellom utvikler og infra. Et **produkt**, ikke et prosjekt.
 - produkt, ikke prosjekt
 - IDP er den konkrete artefakten
 
-[POENG]
-- to nye begreper på ett slide: "golden paths" og "IDP"
-- begge utdypes på neste slides — ikke forklar dem her
+- plattform-teamet plukker standarder, konfigurerer skikkelig, og tilbyr dem som tjenester
+- PE standardiserer de non-functional requirements: versjonskontroll, CI/CD, runtime, infra, logging/monitoring, security/compliance
 
 [BRO]
-- "men hva eier teamet egentlig?" → admin/user
-
-[BAKGRUNN]
-- PE standardiserer de non-functional requirements: versjonskontroll, CI/CD, runtime, infra, logging/monitoring, security/compliance — hver kategori med sitt eget rotete verktøyutvalg
-- plattform-teamet plukker standarder, konfigurerer skikkelig, og tilbyr dem som tjenester
-- ikke bare et teknisk initiativ — et organisatorisk: kapabiliteten er det som compounder
-
+- "Hvem eier hva?" → admin/user
 -->
 
 ---
@@ -380,31 +319,21 @@ Et skreddersydd lag mellom utvikler og infra. Et **produkt**, ikke et prosjekt.
 Platform-teamet eier *å drifte* verktøyene. Produktteamene eier *å bruke* dem.
 
 <!--
-
-[REGI]
-- klareste forklaringen av hva platform-teamet faktisk gjør
-- viktig avklaring: dette er IKKE tilbake til siloed ops
-- bruk Kubernetes-eksempelet hvis publikum er teknisk
-
 [STIKKORD]
 - hvert verktøy har to sider: drifte vs bruke
 - forskjellige fag — ikke samme rolle på forskjellige nivåer
 - Kubernetes: egen sertifisering for cluster admin og application developer
+- to genuint forskjellige skill sets — Kubernetes har separate sertifiseringer for cluster administrator og application developer fordi de krever hver sin kunnskapsbase
 - platform-team eier admin-siden av delte verktøy
 - produktteam beholder bruker-siden
-- forskjell fra gammeldags ops: vi co-designer katalogen — ingen ticketkø
 
-[POENG]
-- ops-personaen lytter ekstra her — dette er hvor jobben deres flytter seg
+- i tradisjonell DevOps lever begge sidene i samme team — det er DER den kognitive lasten kommer fra
+- gammel silo-ops: "ops bestemmer verktøy, gir tilgang via ticket" 
+  — PE: "standardiserte tjenester, self-service, katalogen co-designes med teamene"
+- forskjell fra gammeldags ops: vi co-designer katalogen av verktøy
 
 [BRO]
-- "ok, så hva er en IDP egentlig?" → er/er ikke
-
-[BAKGRUNN]
-- to genuint forskjellige skill sets — Kubernetes har separate sertifiseringer for cluster administrator og application developer fordi de krever hver sin kunnskapsbase
-- i tradisjonell DevOps lever begge sidene i samme team — det er DER den kognitive lasten kommer fra
-- gammel silo-ops: "ops bestemmer verktøy, gir tilgang via ticket" — PE: "standardiserte tjenester, self-service, katalogen co-designes med teamene"
-
+- "ok, så hva er en IDP, hva er den ikke?" → er/er ikke
 -->
 
 ---
@@ -438,28 +367,15 @@ Platform-teamet eier *å drifte* verktøyene. Produktteamene eier *å bruke* dem
 </div>
 
 <!--
-
-[REGI]
-- rydd opp i misforståelser før vi går videre
-- venstre lander først, så høyre — kontrast
-- ikke les listene — pek på 1-2 punkter per side
-
 [STIKKORD]
 - pek venstre: "anbefalte veier" + "produkt, ikke prosjekt"
-- pek høyre: "bare en portal" — vanligste misforståelsen
-- portal er utstillingsvinduet — plattformen er alt bak
+- pek høyre: "bare en portal" / "ingen ba om" — vanligste misforståelsen
 
-[POENG]
-- "portal ingen ba om" forhåndskoder for anti-patterns-sliden senere
-- de fleste i salen tenker "vi har dette" — utfordre med "er det bygget med vilje"
-
-[BRO]
-- "men hva består en IDP egentlig av?" → fem planes
-
-[BAKGRUNN]
 - kjennetegn på ikke-IDP: policy forkledd som workflow, Terraform-wrapper ingen ba om, portal som bare åpner en ticket et annet sted
 - føles det som kontroll eller compliance theater, jobber utviklere stille rundt det — og adopsjonstallene lyver
 
+[BRO]
+- "men hva består en IDP egentlig av?" → fem planes
 -->
 
 ---
@@ -471,35 +387,22 @@ Platform-teamet eier *å drifte* verktøyene. Produktteamene eier *å bruke* dem
 Tre stablede planes utviklere beveger seg gjennom. To tverrgående bånd som krysser alt.
 
 <!--
-
-[REGI]
-- navngi planes — pillsene er kart, ikke leseliste
-- pek på 1-2 pills per plane som anker, ikke alle
-- pek på at Security + Observability er cross-cutting, ikke et lag på bunnen
-- 60-75 sek
-
 [STIKKORD]
-- Developer Control = utviklerens inngang (workload-spec, portal, API, CLI)
-- Integration & Delivery = pipeline-laget (versjonskontroll, CI, CD, orchestrator)
+- felles språk for IDP-arkitektur — fra McKinseys IDP-referansearkitektur, brukt av platformengineering.org / community
+- ingen one-size-fits-all-IDP — men moderne IDP-er deler denne formen / planes
+- denne strukturen lar dere snakke om "hva mangler vi" på en strukturert måte
+
+- Developer Control = utviklerens inngang (workload-spec (kode), portal (UI), API, CLI)
+  - utvikleren velger selv abstraksjonsnivå
+- Integration & Delivery = pipeline-laget (versjonskontroll, CI, CD, (platform-)orchestrator)
 - Resource = der workload-en faktisk kjører (compute, db, storage, dns, nettverk, IAM)
 - Security = policy + secrets + identity — tverrgående
 - Observability = logger + metrics + traces — tverrgående
-- "planes" ikke "lag" — de er parallelle, ikke sekvensielle
 
-[POENG]
-- felles språk for IDP-arkitektur — fra McKinseys IDP-referansearkitektur (PlatformCon 2023), spredt via platformengineering.org
-- denne strukturen lar dere snakke om "hva mangler vi" på en strukturert måte
-- pillsene blir til ports på neste slide — samme element, ny ramme
+- "planes" ikke "lag" — de er parallelle, ikke sekvensielle
 
 [BRO]
 - "hver av disse pillsene er en port — la oss se hva som fyller dem" → ports & adapters
-
-[BAKGRUNN]
-- ingen one-size-fits-all-IDP — men moderne IDP-er deler denne formen
-- utvikleren velger selv abstraksjonsnivå i control plane: workload-spec (kode), portal (UI), API, CLI
-- velbygde plattformer behandler hver deploy som dag null: app- og infra-konfig genereres
-  dynamisk på hver push — det er det som hindrer drift
-
 -->
 
 ---
@@ -515,34 +418,20 @@ Tre stablede planes utviklere beveger seg gjennom. To tverrgående bånd som kry
 Hver port er et **behov** (versjonskontroll, secrets, metrics). Adapterne under er **valg** — utskiftbare verktøy. Når et team trenger et nytt adapter, vokser katalogen.
 
 <!--
-
-[REGI]
-- pek på 1-2 kolonner — ikke gå gjennom alle
-- ports & adapters = hexagonal arkitektur — ramme for "abstraksjon vs implementasjon"
-- viktigste poeng: porten er kontrakten, adapteret er valget
-- 60-90 sek
-
 [STIKKORD]
-- port = behovet (versjonskontroll, secrets, metrics)
-- adapter = den konkrete implementasjonen (GitHub, Vault, Prometheus)
-- katalogen er listen over adapters dere har hardened og støtter
-- nye adapters legges til når et team trenger det — escape hatch absorbert
-- bytte ett adapter bryter ikke katalogen (forutsetter porten er definert riktig)
-- antimønster: "vi har valgt Backstage" som strategi — det er et adapter, ikke en strategi
-
-[POENG]
+- port = behovet / kontrakten (versjonskontroll, secrets, metrics)
+- adapter = den konkrete implementasjonen / valget (GitHub, Vault, Prometheus)
+- katalogen er listen over adapters dere har hardened og støtter under governance
 - denne distinksjonen er hvordan dere unngår å låse dere til feil verktøy
 - gjør det også enklere å bytte adapter senere uten å skifte plattform
+- bytte ett adapter bryter ikke katalogen
+- antimønster: "vi har valgt Backstage" som strategi — det er et adapter, ikke en strategi
 - "vi støtter både GitHub og GitLab" er en katalog-beslutning, ikke en kompromiss
 
+- nye adapters legges til når et team trenger det — escape hatch absorbert
+
 [BRO]
-- "og hjertet i hvordan utviklere møter dette — golden paths" → paved road
-
-[BAKGRUNN]
-- fleksibilitet i BRUK, ikke bare valg: parameteriserte IaC-templates — plattformen skriver templaten med best practice innebygd, teamet sender inn parametere
-- eksempel: Python-pipeline-template pre-wired med riktige security scans; new-service-template med monitoring og policy hooks på plass
-- teamet får standardisering gratis OG beholder rom til å spesialisere
-
+- "og hvordan utviklere møter katalogen — golden paths" → paved road
 -->
 
 ---
@@ -562,40 +451,26 @@ Veien er **anbefalt**, ikke obligatorisk. Den fungerer, dokumentasjonen finnes, 
 </div>
 
 <!--
-
-[REGI]
-- ikke et gjerde — en vei
-- escape hatches = feedback, ikke feil
-- den vanligste misforståelsen er at golden path = obligatorisk
-
 [STIKKORD]
 - anbefalt, ikke obligatorisk
+- paved road = invitasjon, ikke pålegg
+- workflow, ikke verktøy — kan du beskrive den uten å nevne et verktøy?
 - veien fungerer, dokumentasjon finnes, vi har testet den
-- escape hatch = utvei
+- mål golden paths på resultat: time to first deploy, manuelle steg fjernet, frivillig adopsjon
+
 - eksempel: team vil ha Circle CI istedenfor GitLab CI
   → ikke "nei", men "ok, vi setter det opp ordentlig"
   → og legger inn i plattformen — blir en ny golden path
-- escape hatches er hvordan katalogen vokser — ikke et gap
+
+- escape hatches er hvordan katalogen vokser
+- escape hatch = utvei, feedback, ikke feil
 - unntak: hvis bare ett team trenger det, eier de det selv
-
-[POENG]
-- "lite frustrerer utviklere mer enn å bli fortalt at de må gjøre det på én måte"
-- paved road = invitasjon, ikke pålegg
-- golden path = workflow, ikke verktøy — kan du beskrive den uten å nevne et verktøy?
-- start med ÉN path: høy frekvens, høy impact — ikke én per språk/team
-
-[BACKUP]
-- "choice has a cost": utviklere sier de vil ha fleksibilitet — de vil ha sane defaults
 - tvungen path uten escape hatch: utviklere jobber rundt den i stillhet — adoption-tallene lyver
-
-[BRO]
-- "men hva er en golden path egentlig — i én setning?" → quote
-
-[BAKGRUNN]
-- mål golden paths på outcomes: time to first deploy, manuelle steg fjernet, frivillig adopsjon — krever adopsjonen håndhevelse, har du en regel, ikke en path
-- levende ting: en path som henger etter virkeligheten blir forlatt — og tilliten er vanskelig å vinne tilbake
+- utviklere sier de vil ha fleksibilitet — de vil ha fornuftige defaults
 - kjernen: gjør den riktige tingen til den enkle tingen
 
+[BRO]
+- "kok ned golden path — i én setning?"
 -->
 
 ---
@@ -609,21 +484,15 @@ Veien er **anbefalt**, ikke obligatorisk. Den fungerer, dokumentasjonen finnes, 
 ## **"Gjør det slik — så er resten vårt problem."**
 
 <!--
-
 [REGI]
-- hjertet av filosofien
-- la det lande — pause
-- ikke forklar, ikke utdyp — sitatet jobber selv
+- PAUSE
 
 [STIKKORD]
-- "ikke en regel — et løfte"
 - "gjør det slik — så er resten vårt problem"
-- gjenta langsomt om nødvendig
-- 5-10 sek stillhet er OK her
+- "ikke en regel — et løfte"
 
 [BRO]
-- klikk inn i "produkt" — løftet er bare ekte hvis platformen vedlikeholdes
-
+- "løftet er bare ekte hvis platformen vedlikeholdes"
 -->
 
 ---
@@ -643,31 +512,22 @@ Plattformen leveres ikke ferdig. Den utvikles kontinuerlig — med utviklere som
 </div>
 
 <!--
-
-[REGI]
-- mindset-skiftet — den enkeltvis viktigste setningen for CTO-publikum
-- pek på kontrasten i figuren: prosjekt-linja stopper, produkt-loopen går rundt
-- forhåndskoder Team Topologies-callback i timeline
-
 [STIKKORD]
+- mindset-skiftet. produkt ikke prosjekt
 - ikke "vi bygger og leverer ferdig"
+- finansiering må reflektere dette: vedvarende, ikke prosjektpott
 - "vi vedlikeholder et produkt for utviklerne våre"
 - utviklere = kunder
-- adopsjon = suksessmetrikk (ikke features levert)
-- kommer fra Team Topologies, Skelton & Pais, 2019
-
-[POENG]
-- når CTO hører "produkt, ikke prosjekt" — det er der de fleste platforminitiativ feiler
-- finansiering må reflektere dette: vedvarende, ikke prosjektpott
+- adopsjon = suksessmetrikk (ikke features levert, adapters)
+- kommer fra ThoughtWorks Tech Radar (2017) popularisert av Team Topologies (2019)
+- tre pilarer: 
+  customer focus (utviklere = kunder)
+  product ownership (roadmap + intern markedsføring)
+  PM-disiplin (user research, metrics, iterasjon)
+- plattformen konkurrerer alltid — mot cloud-tilbud, PaaS og utviklernes egne scripts; den vinner bare ved å være genuint bedre enn alternativet
 
 [BRO]
 - "men hvor kom dette fra? la oss zoome ut" → timeline
-
-[BAKGRUNN]
-- ideen først i ThoughtWorks Tech Radar 2017, popularisert av Team Topologies
-- tre pilarer: customer focus (utviklere = kunder), product ownership (roadmap + intern markedsføring), PM-disiplin (user research, metrics, iterasjon)
-- plattformen konkurrerer alltid — mot cloud-tilbud, PaaS og utviklernes egne scripts; den vinner bare ved å være genuint bedre enn status quo
-
 -->
 
 ---
@@ -685,16 +545,9 @@ Plattformen leveres ikke ferdig. Den utvikles kontinuerlig — med utviklere som
 Platform Engineering dukket ikke opp i et vakuum. Det er svaret på et problem som har bygget seg opp i over tjue år.
 
 <!--
-
-[REGI]
-- sett scenen — ikke historieleksjon
-- vis at PE har lineage og motiv
-- fire stopp: 2009, ~2015, 2019, 2022+
-
 [STIKKORD]
 - PE dukket ikke opp i et vakuum
 - svar på problem som har bygget seg over 20+ år
-- ikke buzzword — konsept med opphav
 
 [BRO]
 - klikk → 2009
@@ -722,25 +575,15 @@ Kultur. Felles ansvar. *"You build it, you run it."* Revolusjonerende.
 Men så kom skyen.
 
 <!--
-
-[REGI]
-- åpning av lineage-fortellingen
-- rolig tempo — sett scenen før smerten kommer
-- ~30 sek
-
 [STIKKORD]
-- Patrick Debois, DevOpsDays Ghent
+- Patrick Debois, gav navn (DevOpsDays Ghent)
 - muren mellom dev og ops må ned
-- kultur, felles ansvar
-- "you build it, you run it"
+- fokus på kultur, felles ansvar
+- Werner Vogels (Amazon, 2006) "you build it, you run it"
 - revolusjonerende — for sin tid
-
-[BACKUP]
-- hvis noen spør: "you build it, you run it" er Werner Vogels (Amazon, 2006) — ikke Debois
 
 [BRO]
 - "men så kom skyen" → 2015
-
 -->
 
 ---
@@ -766,12 +609,6 @@ Senior-devs havner i *shadow operations*. Ticket-køene vokser. Kognitiv last sp
 **DevOps var ikke feil. Det ble bare for mye for ett menneske å bære.**
 
 <!--
-
-[REGI]
-- smerten — alle kjenner seg igjen
-- klimakset er den fete linja til slutt
-- ~45 sek
-
 [STIKKORD]
 - cloud-native eksploderer
 - K8s, TF, Helm, service meshes
@@ -779,15 +616,12 @@ Senior-devs havner i *shadow operations*. Ticket-køene vokser. Kognitiv last sp
 - shadow operations på senior-nivå
 - ticket-køer vokser
 - kognitiv last spiser dagen
-- KLIMAKS: DevOps var ikke feil — bare for mye for én
+"DevOps lovet utviklerne autonomi — i praksis fikk de mer ansvar og samme ventetid"
 
-[BACKUP]
-- hvis publikum trenger broen tilbake til 2009:
-  "DevOps lovet utviklerne autonomi — i praksis fikk de mer ansvar og samme ventetid"
+- KLIMAKS: DevOps var ikke feil — bare for mye for én person
 
 [BRO]
 - "noen så at problemet var organisatorisk, ikke teknisk" → 2019
-
 -->
 
 ---
@@ -829,36 +663,18 @@ Plattform som produkt. Utviklere er kunder. Grunnmuren for alt vi gjør i dag.
 </div>
 
 <!--
-
-[REGI]
-- nøkkelboken
-- pek på TT-figuren — "for de som har lest boken"
-- ett poeng: paradigmeskiftet
-- 30-45 sek
-
 [STIKKORD]
-- Matthew Skelton + Manuel Pais
-- fire teamtyper: Stream-aligned, Platform, Enabling, Complicated-subsystem
-- Platform-team = leverer produktet (plattformen)
-- Enabling-team = gir andre team capabilities de mangler, midlertidig
+- 2019 Nøkkelbok, Matthew Skelton + Manuel Pais. Fire teamtyper:
+- Stream-aligned = Et team som følger en bestemt arbeidsflyt, ofte knyttet til et område i virksomheten.
+- Complicated Subsystem = Et team for deler av løsningen som krever ekstra spesialisert kunnskap.
+- Enabling: Et midlertidig team som hjelper andre team når de står fast, eller trenger å lære noe nytt.
+- Plattform: Et team som lager tjenester og verktøy som gjør det enklere for andre team å utvikle og levere. Plattformen skal fungere som et internt produkt som teamene har nytte av og faktisk ønsker å bruke.
+
 - nøkkelidé: plattform som produkt
 - utviklere = kunder, ikke kolleger
-- TT-figur: stream-teams som kunder, platform-team som leverandør
-- her legges grunnmuren
-
-[POENG]
-- pek kort på figuren: stream-teams blir betjent av platform-teamet
-- fremhev Enabling — vi kommer tilbake til det senere (callback før overlevering)
-- ikke teknisk gjennomgang av Team Topologies — bare det som ramme
-
-[BACKUP]
-- Conway's law hvis spørsmål: arkitekturen speiler kommunikasjonsveiene — derfor er org-design arkitektur-design
-- boka begrenser teamansvar til teamets kognitive last — samme problem som slide 7
-- NAIS refererer eksplisitt TT: platform-team som produkt-team, X-as-a-Service
 
 [BRO]
 - "konseptet fikk navn og hjem" → i dag
-
 -->
 
 ---
@@ -883,33 +699,23 @@ IDP-en blir den konkrete artefakten — **produktet** plattform-teamet leverer.
 Ikke DevOps på nytt. Ikke SRE i nye klær. En egen disiplin — med utvikleren som kunde.
 
 <!--
-
-[REGI]
-- her tas konseptet fra teori til praksis
-- 2022 er startpunktet, men momentumet fortsetter — pek på pilen til høyre
-- ikke DevOps på nytt — viktig avklaring
-
 [STIKKORD]
+- her tas konseptet fra teori til praksis
 - okt 2022: Gartner top 10 strategic tech trends *for 2023*
-- 2022: platformengineering.org passerer 8 000 medlemmer (startet ~1 000 i jan 2022)
-- 2026: > 270 000 medlemmer på tvers av kanaler (footer-tallet — vis veksten)
-- prediksjon: 80 % av eng-organisasjoner med platform-team innen 2026 (opp fra 45 % i 2022)
-- IDP = det konkrete produktet
-- egen disiplin — utvikleren som kunde
-- ikke DevOps rebranded, ikke SRE i nye klær
+- prediksjon: 80 % av eng-organisasjoner med platform-team innen 2026 (fra 45 % i 2022)
+- 2022: platformengineering.org starter med 1000, passerer 8 000 medlemmer, 2026: > 270 000
 
-[POENG]
-- legitimering for executive-publikum: dette er ikke konsulentmote
-- pilen i tidslinjen viser at 2022+ ikke er et endepunkt — vi er fortsatt i denne fasen
+- egen disiplin — utvikleren som kunde
+- IDP = det konkrete produktet
+- devops vs PE-aksene: 
+  mål (samarbeid → self-service), 
+  output (kultur → produkt),
+  scope (prosessendring → engineered abstraksjonslag),
+  eier ("alle" → dedikert team)
+- PE beholder DevOps-ånden (samarbeid, rask feedback, delt ansvar) men anerkjenner at samarbeid alene ikke skalerer gjennom cloud-native-kompleksitet
 
 [BRO]
-- "og dette er ikke amerikansk hype — la oss se hva som faktisk kjører i Norge i dag" → norske IDP-er (i drift)
-
-[BAKGRUNN]
-- devops vs PE-aksene: mål (samarbeid → self-service), output (kultur → produkt), scope (prosessendring → engineered abstraksjonslag), eier ("alle" → dedikert team)
-- PE beholder DevOps-ånden (samarbeid, rask feedback, delt ansvar) men anerkjenner at samarbeid alene ikke skalerer gjennom cloud-native-kompleksitet
-- PE leverer på det opprinnelige DevOps-løftet — derfor "ikke DevOps på nytt"
-
+- "og dette er ikke bare hype — la oss se hva som faktisk kjører i Norge i dag" → norske IDP-er (i drift)
 -->
 
 ---
@@ -938,34 +744,22 @@ AWS EKS + GitLab. Fellesplattform for kunnskapssektoren. Visjon: *"Norges beste 
 AKS + ArgoCD + Dapr. Lansert mars 2026 som svar på digital suverenitet — bygget for leverandøruavhengighet.
 
 <!--
-
-[REGI]
-- proof-point — la tyngden lande
-- privat (Equinor) + offentlig (NAV, SIKT, Enova)
-- Njord er ferskest — digital suverenitet, ikke bare DevEx
-- ikke ramse opp — pek på 1-2 detaljer per IDP
-
 [STIKKORD]
-- NAIS (NAV): ~100 team, 1 600+ apper i produksjon, åpen kildekode, NaaS til andre etater
-- Radix (Equinor): AKS-PaaS, deklarativ via radixconfig.yaml, MIT, to prod-clustere (North Europe + West Europe) + playground
-- Platon (SIKT): AWS EKS + GitLab, fellesplattform kunnskapssektor, "Norges beste utvikleropplevelse"
-- Njord (Enova): AKS + ArgoCD + Dapr, lansert 19. mars 2026, motivasjon = digital suverenitet / leverandøruavhengighet
-- Njord-utviklerkontrakt: "du er kapteinen på ditt eget skip. Din oppgave er å navigere mot nye mål og levere verdi. Vår oppgave er å sørge for at havet er rolig, vinden er gunstig og at havnen alltid er åpen."
+Slogan - destilert fokus
+- NAIS (NAV): åpen kildekode, NaaS til andre etater
+  "én Application-spec → hele K8s-stacken"
+- Radix (Equinor): AKS, deklarativ via radixconfig.yaml
+  "you provide your code and a Dockerfile — Radix takes it from there"
+- Platon (SIKT): AWS, fellesplattform kunnskapssektor
+  "Norges beste utvikleropplevelse", "Platon gjør utvikleren god"
+- Njord (Enova): AKS, motivasjon = digital suverenitet / leverandøruavhengighet
+  "Du er kapteinen på ditt eget skip. Din oppgave er å navigere mot nye mål og levere verdi. Vår oppgave er å sørge for at havet er rolig, vinden er gunstig og at havnen alltid er åpen."
 
-[POENG]
-- ikke amerikansk hype — norsk virkelighet
 - dere er ikke først
-- både privat og offentlig har bygget — på tvers av sektor
-
-[BACKUP]
-- NAIS: uttales "nice", startet 2017; Naiserator: én Application-spec → hele K8s-stacken; "it's just Kubernetes — abstractions on top"
-- Radix: latin for "rot"; "you provide your code and a Dockerfile — Radix takes it from there"; eksplisitt mål: K8s-kunnskap IKKE nødvendig
-- Platon: gresk navnetradisjon (clusteret heter sokrates); "Platon gjør utvikleren god"; prinsipp: 100 % selvbetjening, tynt plattformlag
-- Njord: havets gud; clusteret heter Noatun (skipstunet); plattformteamet heter Regin (smeden); ingen egne operators — kun standard controllers
+- på tvers av sektor, både privat og offentlig
 
 [BRO]
-- "men hvorfor — hva er gevinsten?" → verdi-seksjon
-
+- "hva er gevinsten?" → verdi-seksjon
 -->
 
 ---
@@ -979,19 +773,12 @@ AKS + ArgoCD + Dapr. Lansert mars 2026 som svar på digital suverenitet — bygg
 <img class="deco-icon deco-center" src="icons/Financial%20Target_Dark_Bar.png" alt="">
 
 <!--
-
-[REGI]
-- section break — pause før konkret nytte
-- signaliser skifte: fra hva → hvorfor det matter
-- la sliden stå et øyeblikk
-
 [STIKKORD]
-- kort: "nå skal vi snakke verdi"
-- pause, åndedrett
+- skifte: fra hva → hvorfor det matter
+- for utvikler, ops, virksomhet.
 
 [BRO]
 - klikk → triptyk
-
 -->
 
 ---
@@ -1011,37 +798,17 @@ AKS + ArgoCD + Dapr. Lansert mars 2026 som svar på digital suverenitet — bygg
 Plattformen er **ikke en IT-kostnad.** Den er en investering i organisasjonens leveringskraft.
 
 <!--
-
-[REGI]
-- SVG-en bærer
-- pek på hver søyle bare hvis publikum trenger det
-- pointe: ikke IT-kostnad, men investering i leveringskraft
-- KRITISK at alle tre personas hører seg selv her
-
 [STIKKORD]
 - utvikler: tid tilbake, mindre frustrasjon, mer flow
 - ops: ikke flaskehals lenger, strategisk arbeid, DORA-metrikker opp
-- business: raskere time to market, lavere risiko, governance bevart
+  DORA: change failure rate ned, deploy frequency opp, lead time ned, MTTR ned
+- foretningen: raskere time to market, lavere risiko, governance bevart
+
 - samme plattform — tre vinninger
-- ikke en kostnad, en investering
-
-[POENG]
-- DORA: change failure rate ned, deploy frequency opp, lead time ned, MTTR ned
-- nevn DORA bare hvis salen er teknisk
-
-[BACKUP]
-- hvis noen kjenner DORA 2024 og innvender: rapporten fant +8 % individuell og
-  +10 % team-produktivitet, men −8 % throughput og −14 % change stability
-- viktig nyanse: tapet gjaldt team som ble PÅLAGT å bruke plattformen for alt
-  → DORAs hypotese: flere handoffs mellom systemer = mer ventetid
-- svar: "det er nettopp derfor golden paths er anbefalt og ikke obligatorisk —
-  en plattform du må gjennom er en ny flaskehals, en plattform du vil gjennom er en snarvei"
-- eier innvendingen selv hvis salen er DORA-kyndig — det gir troverdighet og
-  setter opp paved road-sliden
+- pointe: ikke IT-kostnad, men investering i leveringskraft
 
 [BRO]
-- "men hvordan måler vi det?" → ROI accent
-
+- "men hvordan måler vi det?" →
 -->
 
 ---
@@ -1055,32 +822,15 @@ Plattformen er **ikke en IT-kostnad.** Den er en investering i organisasjonens l
 ## Platform-ROI er **adferdsendring i skala.**
 
 <!--
-
-[REGI]
-- reframe — viktigste setning for CFO/CTO-publikum
-- ikke regnskapssyntese, men adferdsendring
-- la "adferdsendring i skala" lande før neste klikk
-
 [STIKKORD]
 - innkjøpskalkyle = feil ramme
 - "kjøpte X, sparte vi mer enn X" — feil spørsmål
 - riktig spørsmål: hva endret seg fordi plattformen finnes
-- adferdsendring i skala = leverage
-- multiplier, ikke kostnadskutt
-
-[BACKUP]
-- hvis "hvordan starter vi å måle?": start med en value hypothesis —
-  "vi tror self-service reduserer ticket-volum" / "vi tror standardisert deploy reduserer hendelser"
-- kan du ikke artikulere hypotesen, kan du ikke regne ROI
+- adferdsendring i skala, leverage
+- ikke kostnadskutt - mindset: du bygger en multiplier (AI) — multipliers vises i throughput og tillit, ikke i regneark
 
 [BRO]
 - "la oss gjøre det konkret" → tre regnestykker
-
-[BAKGRUNN]
-- ROI-trappen: value hypothesis → tidsgevinst (kapasitet skapt) → failure reduction → plattform-effektivitet (tickets ned = tid til nye capabilities) → leveransefart = revenue acceleration
-- revenue-eksempel: en feature verdt 500 k USD/år som shipper to måneder tidligere kan alene forsvare investeringen
-- mindset: du bygger en multiplier — multipliers vises i throughput og tillit, ikke i procurement-regneark
-
 -->
 
 ---
@@ -1130,40 +880,23 @@ Onboarding-friksjon kuttet med 6×.
 </div>
 
 <!--
-
-[REGI]
-- vær tydelig på at tallene er illustrative — mønsteret er reelt
-- ikke prøv å forsvare presisjonen
-- la tallene være anker; fortellingen er poenget
-- footer-disclaimer er der for de som vil regne på sitt eget tall — pek hvis noen spør
-- 60-90 sek
-
 [STIKKORD]
+- modellen er platformengineering.org sin ROI-tilnærming
 - TID FRIGJORT (~15 MNOK):
   - 100 utviklere × 2 t/uke × 50 uker × 1 500 kr/t
   - kapasitet — ikke spart, frigjort
   - du sparker ikke folk — du flytter timer fra friksjon til verdi
-  - 1 500 kr/t = alternativ ekstern kost (konsulent-ekvivalent), ikke intern lønn
+  - 1 500 kr/t = ekstern kost
 - FEIL UNNGÅTT (~5 MNOK):
   - 20 færre alvorlige hendelser × 250 000 kr
-  - direkte målbar risikoreduksjon
   - "alvorlig hendelse" = nedetid + responstid + tapt produktivitet
-  - executives forstår denne umiddelbart
 - HASTIGHET (~1,5 MNOK):
   - 5 nye utviklere produktive på 1 uke i stedet for 6
   - 5 × 5 uker spart × 40 t × 1 500 kr/t
   - onboarding-friksjon kuttet med 6×
-  - resonerer på tvers av bransjer — alle ansetter
-
-[POENG]
-- "directional confidence, ikke regnskapsprecisjon"
-- dette er retning, ikke regnskap
-- en eneste plattform-shift kan låse opp >2 MNOK reelt — empirisk fra felt
-- modellen er platformengineering.org sin ROI-tilnærming (100 eng × 2 t/uke × timekost) — ikke hjemmesnekret
 
 [BRO]
-- "ok, hvordan starter vi uten å rive ned alt?" → hvordan-seksjon
-
+- "ok, overbevist? hvordan starter vi uten å rive ned alt?" → hvordan-seksjon
 -->
 
 ---
@@ -1179,13 +912,7 @@ Onboarding-friksjon kuttet med 6×.
 <!--
 
 [REGI]
-- section break
-- vi har vist hva og hvorfor — nå hvordan
-- "uten å rive ned alt" = nøkkelfrase, ofte den som beroliger CTO
-
-[STIKKORD]
-- kort, la sliden stå
-- pause før klikk
+PAUSE
 
 [BRO]
 - klikk → MVP
@@ -1208,34 +935,21 @@ Onboarding-friksjon kuttet med 6×.
 Lav innsats. Lav risiko. Reell læring. **Ikke produksjon — ikke ennå.** Du finner de ødelagte kontrollene mens stakes fortsatt er lave.
 
 <!--
-
-[REGI]
-- flight simulator-metafor: lav risiko, reell læring
-- ikke produksjon ennå
-- pilot-team, ikke alle samtidig
-
 [STIKKORD]
 - MVP = bevisst startpunkt, ikke utvanning
+- "du finner feilene mens konsekvensene er lave"
 - tre egenskaper:
   - representativ (vanlige mønstre, ikke edge cases)
   - repeterbar (kan utvides til neste team)
   - iterativ (forbedres på reell bruk)
-- ett pilot-team — innovator/early adopter
+- ett pilot-team — early adopter
+- PE teamet bør være senior infra med sterke meninger. pga valg.
 - bare non-prod
 - vis verdi raskt — ikke bevis at du kan bygge alt
-
-[POENG]
-- "du finner de ødelagte kontrollene mens stakes er lave" — bruk denne formuleringen
-
-[BACKUP]
-- hvis "hvordan gjør vi det konkret?": fire faser — discovery (viktigst, oftest forhastet), integration, deployment (ende-til-ende demo), adoption planning
-- vanligste MVP-feil: rushe til kompleksitet, verktøy ≠ outcomes, glemme brukerne
-- DX gjelder ikke bare utviklere — security, finans og ledelse er også brukere
-- tilpass demoen: engineers vil se workflows/escape hatches, finans kost, ledelse fart og risiko
+- vanligste MVP-feil: rushe til kompleksitet, antall verktøy ≠ outcomes, glemme brukerne
 
 [BRO]
 - "men hvor møter vi pilot-teamet?" → maturity gradient
-
 -->
 
 ---
@@ -1251,23 +965,16 @@ Lav innsats. Lav risiko. Reell læring. **Ikke produksjon — ikke ennå.** Du f
 Plattformen formes av virkeligheten i produktteamene — ikke av idealtilstanden din. Hjelp dem flytte seg inkrementelt. Versjon 1 må kanskje støtte litt av det gamle før den fortjener å utvikle seg bort fra det.
 
 <!--
-
-[REGI]
-- subtilt men kritisk poeng
-- vanlig feil: dra alle på en moderne plattform i ett jafs
-- denne sliden er forsikring mot motstand i teamene
-
 [STIKKORD]
 - plattformen formes av virkeligheten — ikke ideelltilstand
 - inkrementell flytting, ikke big bang
 - v1 må kanskje støtte litt av det gamle
 - senere fortjener den å utvikle seg bort fra det
 - jobben er å fjerne friksjon — IKKE pålegge migrering
-- press for hardt = motstand (rimeligvis)
+- press for hardt = motstand
 
 [BRO]
 - "og det leder til den vanligste feilen" → wrong way
-
 -->
 
 ---
@@ -1305,27 +1012,16 @@ K8s-drift, secrets, observability. Fjerner arbeid fra dag én.
 Standardisering kommer senere — først må du tjene retten til den.
 
 <!--
-
-[REGI]
-- antipattern-vaksinasjon før vi viser Canopy
-- ikke standardisering først — credibility først
-- denne motvirker den klassiske "vi velger CI/CD-stack først"-feilen
-
 [STIKKORD]
-- feil åpning signaliserer regler, ikke hjelp
-- riktig åpning: ta den verste delte flaskehalsen FRA dem
+- feil åpning: regler, ikke hjelp
+- riktig åpning: ta den verste flaskehalsen FRA dem
 - tjen retten til å standardisere — etter du har levert verdi
 
-[POENG]
-- "tjen credibility først" = signalord for CTO som har sett initiativ feile
+- kandidater for "verste delte smerte": verktøy mange team allerede bruker dårlig — K8s cluster ops, secrets management, observability-oppsett
+- standardiser før du har tjent kreditten, og du blir ignorert — teamene har ikke overlødig-kapasitet til å migrere før du har frigjort den
 
 [BRO]
-- "med det i bakhodet — la oss se på hva vi har bygget" → Canopy
-
-[BAKGRUNN]
-- kandidater for "verste delte smerte": verktøy mange team allerede bruker dårlig — K8s cluster ops, secrets management, observability-oppsett
-- standardiser før du har tjent kreditten, og du blir ignorert — teamene har ikke spare-kapasitet til å migrere før du har frigjort den
-
+- "la oss se på hva vi har bygget" → Canopy
 -->
 
 ---
@@ -1345,31 +1041,22 @@ PoC-en er ferdig. Nå bygger vi **produktlaget**: golden paths, dokumentasjon, f
 
 <!--
 
-[REGI]
-- konkret — ikke salgspitch
-- "vi gjør dette selv"
-- mest detaljerte tekniske slide; tempo opp lett
-- ~60 sek
-
 [STIKKORD]
 - Canopy = SoftwareOnes interne utviklingsplattform
 - åpne standarder — ikke vendor-lock
 - Kubernetes — sky-agnostisk fundament
-- Argo CD med Apps-of-Apps — deklarativ leveranse, versjonert
+- Argo CD med Apps-of-Apps — deklarativ delivery
 - custom operatorer — skreddersydd plattform-automasjon (Håvard demonstrerer senere)
-- OIDC — føderert identitet
-- PoC ferdig — nå bygger vi produktlaget:
+- OIDC — identitet
+- PoC ferdig:
   - golden paths
   - dokumentasjon
   - feedback loops
 
-[POENG]
-- vi har laget motoren — nå pakker vi det inn for utviklere
-- akkurat det vi nettopp definerte: produkt, ikke prosjekt
-- bevis at vi følger vår egen lære
+Ikke poenget. Er et produkt, men ikke noe vi vil selge.
 
 [BRO]
-- "og vi kan hjelpe dere komme dit også" → Enabling Team as a Service
+- "vi kan hjelpe dere komme dit også"
 
 -->
 
@@ -1386,35 +1073,20 @@ Du trenger ikke ansette et komplett platform-team på dag én.
 Callback til Team Topologies: et enabling team eksisterer for å gi andre team capabilities de mangler — og oppløses, eller flyttes, når jobben er gjort.
 
 <!--
-
-[REGI]
-- rolig pitch — ikke salgsstil
-- callback til Team Topologies-slide (2019) — pek tilbake i tid
-- ~45 sek
-
 [STIKKORD]
 - dere trenger ikke ansette et helt platform-team for å komme i gang
-- Enabling Team = team-typen fra Team Topologies (callback)
+- Enabling Team
 - oppgave: gi andre team capabilities de mangler — midlertidig
 - SoftwareOne kan kjøre den rollen:
   - bygge MVP sammen med dere
   - etablere golden paths
   - kunnskapsoverføring
-  - overlevere til kundens eget platform-team
+  - overlevere til platformen til dere
 - ikke "vi tar over driften for alltid" — vi setter dere i stand til å eie det selv
-
-[POENG]
-- platform engineering = capability, ikke headcount
 - midlertidig enabling team = lavere risiko enn å bygge et komplett team før dere vet hva dere trenger
 
 [BRO]
-- "og for å vise hvordan det kan se ut konkret, hører dere fra Håvard og Marius etter pausen" → teasers
-
-[BAKGRUNN]
-- PE er en capability, ikke en stillingstittel — én "platform engineer" som skal dekke infra + DX + security + produkt er ikke en rolle, det er et team
-- start med problemstatement, ikke "vi vil ha en plattform": "onboarding tar for lang tid", "prod-incidents gjentar seg av samme årsak"
-- tidlige team: små, seniore, opinionated — 2-4 sterke folk er nok til å starte
-
+- "og for å vise hvordan det kan se ut konkret, hører dere fra Håvard og Marius etter pausen" →
 -->
 
 ---
@@ -1448,26 +1120,14 @@ Automatisk repo, CI-pipeline, og deploy via ArgoCD.
 Det er ikke et ferdig produkt — vi starter en **samtale**.
 
 <!--
-
-[REGI]
-- kort og praktisk — ikke salgspitch
-- pek på de to konkrete eksemplene — la dem teasere
-- plass for screenshots fra Håvard/Marius (legges inn hvis BK rekker)
-- ~30 sek
-
 [STIKKORD]
 - Håvard: operator-mønsteret — motoren under plattform-automasjon
 - Marius: Canopy live — onboarding til prod, demo med ArgoCD
-- begge ER kapabiliteten — bevis på at platform engineering = capability
-- vi starter samtale, ikke salgssyklus
 
-[POENG]
-- handover demonstrerer "platform engineering = kapabilitet, ikke ett rolleansvar"
-- ikke nevn det eksplisitt — la det være implisitt
+- Selger ikke Canopy. Brukes til å starter samtale
 
 [BRO]
 - "men før vi gir over: la oss se på hva som ofte går galt" → anti-mønstre
-
 -->
 
 ---
@@ -1511,37 +1171,16 @@ Ex-ops bygger det *de* kjenner. Løser ops-problemer, ikke utviklerproblemer.
 Tre feil. Én rotårsak: **bygget uten å snakke med utviklerne.**
 
 <!--
-
-[REGI]
-- 60-90 sek total
-- tre kort, én per persona — ops, dev, business
-- la felles rotårsak lande til slutt
-- bruk warning-fargen aktivt: dette er fallgruver, ikke gode råd
-
 [STIKKORD]
-- ett kort per persona: ops / dev / business
-- SKILT: "DevOps med finere navn"
-- SELV: god intensjon — feil retning
-- PORTAL: prestisjeprosjekt, null research
-- rotårsaken lander til slutt — pek på linja
+- Hjelper ikke å omdøpe OPS teamet til PE.
+- OPS Løser ops problemer, ikke utviklerproblemer. god intensjon — feil retning
+- Starte med en portal. imponerende demo, ingen brukere.
 
-[POENG]
-- platform engineering uten samtalen er bare kostnad
-- inspirert av "9 steps to platform engineering hell" (Luca Galante) — virkelige feilmoduser
-- denne sliden er det executives husker — bruk den
-
-[BACKUP]
-- flere steg fra samme kilde hvis spørsmål: jage ny teknologi uten grunn (Jenkins → GHA → Crossplane → ...),
-  "you're not that special" (custom K8s for å selge sko på nett), fire parallelle IDP-initiativ i siloer,
-  skjule sunk costs bak pynte-metrikker — og de beste på teamet slutter først
+- to grunnårsaker bak nesten alle feilmodusene: 
+  hoppe over platform-as-a-product-mindsetet, og hoppe over kommunikasjonsarbeidet
 
 [BRO]
 - "så, tilbake til åpningen" → closing accent
-
-[BAKGRUNN]
-- to grunnårsaker bak nesten alle feilmodusene: hoppe over platform-as-a-product-mindsetet, og hoppe over kommunikasjonsarbeidet
-- beslektede feller: build-here-syndrom (bygge selv det som finnes open source), loudest voice fallacy (bygge det det høyeste teamet krever — ikke det research validerer)
-
 -->
 
 ---
@@ -1554,21 +1193,14 @@ Tre feil. Én rotårsak: **bygget uten å snakke med utviklerne.**
 ## Da har du et **plattformproblem**.
 
 <!--
-
-[REGI]
-- la setningen lande — pause
-- ingen utdyping — sitatet jobber
-
 [STIKKORD]
-- "tid på noe annet enn verdiskapende kode = plattformproblem"
-- gjenta langsomt om publikum trenger det
-- pause 5+ sek
 
-[POENG]
-- omformulering av åpningshookene — løkken lukkes
+Hvis utviklerne dine bruker tid på noe annet enn å skrive software som skaper verdi
+
+Da har du et plattformproblem
 
 [BRO]
-- "her er tre spørsmål dere kan ta med dere" → tre spørsmål
+- "her er tre spørsmål for å finne problemet" → tre spørsmål
 
 -->
 
@@ -1585,24 +1217,15 @@ Tre feil. Én rotårsak: **bygget uten å snakke med utviklerne.**
 Svarene beskriver **plattformgapet deres.**
 
 <!--
+1. Hvor lang tid tar det fra idé til kjørende tjeneste i prod?
+2. Hvor mange tickets håndterer ops som ikke burde eksistert?
+3. Hvor lenge før fem nye utviklere er produktive?
 
-[REGI]
-- konkrete diagnostiske spørsmål — de skal kunne ta dem med
-- ikke svar — la spørsmålene henge
-- ett spørsmål per persona (dev / ops / business)
-
-[STIKKORD]
-- les spørsmålene rolig — ett per persona (dev / ops / business)
-- skarpere variant på 3 hvis erfaren sal: "hvor lenge før første kodelinje i prod?"
-- svarene = plattformgapet — og gapet har en pris
-
-[POENG]
-- la siste linje "gapet har en pris" lande hardt — det er kroken
-- ikke utdyp — pause, klikk
+Svarene beskriver plattformgapet.
+og gapet har en pris
 
 [BRO]
-- "og når dere har svarene — her er målbildet" → final
-
+- "og når dere har svarene — her er målbildet man skal strekke seg etter" → final
 -->
 
 ---
@@ -1622,23 +1245,16 @@ Raskere leveranser. Lavere risiko. Mindre teknisk gjeld.
 ## Det er det Platform Engineering leverer.
 
 <!--
+En organisasjon der utviklere skriver software som skaper verdi — ikke kjemper med infrastruktur under.
 
-[REGI]
-- avslutning — lukk løkken
-- "det er det Platform Engineering leverer" = mic drop
-- pause før takk og spørsmål
+En plattform som er et produkt, ikke et prosjekt.
 
-[STIKKORD]
-- ikke les punktene — de er oppsummeringen publikum allerede har hørt
-- sluttlinje: "det er det Platform Engineering leverer" — så stille
+Raskere leveranser. Lavere risiko. Mindre teknisk gjeld.
 
-[POENG]
-- løkken lukkes: åpningshookene → diagnose → svar → målbildet
+Det er det Platform Engineering leverer.
 
 [BRO]
-- takk → Q&A eller direkte til pause
-- ikke be om spørsmål før etter pausen hvis tid er stram
-
+- takk →
 -->
 
 ---
@@ -1657,13 +1273,7 @@ Bjørn Kristian Punsvik
 </div>
 
 <!--
-
-[REGI]
-- la sliden stå under Q&A / inn i pausen
-
 [STIKKORD]
-- takk — spørsmål nå hvis tid, ellers i pausen
 - Håvard og Marius fortsetter etter pausen
-
 -->
 
